@@ -378,6 +378,9 @@
 
     /* FAQ */
     .faq{background:linear-gradient(150deg,#3B1608 0%,#5C2C14 50%,#7D4535 100%);}
+    .faq::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle,rgba(255,250,211,.10) 1.5px,transparent 1.5px);background-size:28px 28px;z-index:0;}
+    .faq{position:relative;}
+    .faq .container{position:relative;z-index:1;}
     .faq-header{text-align:center;margin-bottom:36px;}
     .faq-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:7px 18px;border-radius:100px;margin-bottom:24px;}
     .faq-badge img{width:14px;height:14px;object-fit:contain;filter:brightness(10);}
