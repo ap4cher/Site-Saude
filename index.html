@@ -268,7 +268,7 @@
     .tratamos-viewport{overflow:hidden;margin:0 calc(-1 * var(--space-container));padding:0 var(--space-container) 8px;}
     .tratamos-track{display:flex;gap:16px;transition:transform .48s cubic-bezier(.4,0,.2,1);will-change:transform;}
     /* card — cores claras invertidas */
-    .tcard{background:linear-gradient(145deg,#4E2518,#7D4535);border:1px solid rgba(125,69,53,.2);border-radius:22px;flex:0 0 calc(33.33% - 11px);display:flex;flex-direction:column;overflow:hidden;box-shadow:0 8px 32px rgba(125,69,53,.18);transition:transform .25s,box-shadow .25s;}
+    .tcard{background:linear-gradient(145deg,#4E2518,#7D4535);border:1px solid rgba(125,69,53,.2);border-radius:22px;flex:0 0 220px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 8px 32px rgba(125,69,53,.18);transition:transform .25s,box-shadow .25s;}
     .tcard:hover{transform:translateY(-4px);box-shadow:0 14px 44px rgba(125,69,53,.28);}
     .tcard-photo{width:100%;height:210px;background:linear-gradient(135deg,rgba(125,69,53,.5),rgba(59,22,8,.9));flex-shrink:0;position:relative;overflow:hidden;}
     .tcard-photo-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s ease;}
@@ -392,12 +392,8 @@
     @media(min-width:640px){.faq-h1{font-size:2.8rem;}}
 
     /* PRÓXIMO PASSO */
-    .proximo-passo{position:relative;background:#1A0A04;overflow:hidden;padding:0;display:flex;flex-direction:column;align-items:stretch;}
-    .pp-arc{width:100%;pointer-events:none;display:block;flex-shrink:0;line-height:0;}
-    .pp-arc svg{width:100%;display:block;}
-    .pp-arc-top{order:0;}
-    .pp-arc-bottom{order:2;}
-    .pp-inner{order:1;flex:1;position:relative;z-index:2;text-align:center;padding:28px 24px;max-width:680px;margin:0 auto;width:100%;box-sizing:border-box;}
+    .proximo-passo{background:linear-gradient(150deg,#3B1608 0%,#5C2C14 50%,#7D4535 100%);}
+    .pp-inner{text-align:center;padding:0;max-width:680px;margin:0 auto;}
     .pp-label{display:inline-flex;align-items:center;gap:6px;background:rgba(241,213,124,.10);border:1px solid rgba(241,213,124,.28);color:#F1D57C;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:28px;}
     .pp-h1{font-family:var(--font-display);font-size:1.9rem;color:white;line-height:1.1;margin:0 0 12px;}
     .pp-h1 em{color:#F1D57C;font-style:normal;}
@@ -1104,53 +1100,9 @@
 </section>
 
 <!-- 9. PRÓXIMO PASSO -->
-<section class="proximo-passo" id="proximo-passo">
+<section class="proximo-passo section" id="proximo-passo">
 
-  <!-- Arco superior — curva para fora (para cima) -->
-  <div class="pp-arc pp-arc-top">
-    <svg viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="arcGradTop" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#7D4535" stop-opacity="0"/>
-          <stop offset="30%" stop-color="#e77100" stop-opacity="0.7"/>
-          <stop offset="50%" stop-color="#F1D57C" stop-opacity="1"/>
-          <stop offset="70%" stop-color="#e77100" stop-opacity="0.7"/>
-          <stop offset="100%" stop-color="#7D4535" stop-opacity="0"/>
-        </linearGradient>
-        <filter id="blurTop" x="-10%" y="-50%" width="120%" height="200%">
-          <feGaussianBlur stdDeviation="8"/>
-        </filter>
-      </defs>
-      <!-- glow -->
-      <path d="M-60 75 Q600 -30 1260 75" stroke="url(#arcGradTop)" stroke-width="28" fill="none" filter="url(#blurTop)" opacity="0.6"/>
-      <!-- linha nítida -->
-      <path d="M-60 75 Q600 -30 1260 75" stroke="url(#arcGradTop)" stroke-width="2" fill="none"/>
-    </svg>
-  </div>
-
-  <!-- Arco inferior — curva para fora (para baixo) -->
-  <div class="pp-arc pp-arc-bottom">
-    <svg viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="arcGradBot" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#7D4535" stop-opacity="0"/>
-          <stop offset="30%" stop-color="#e77100" stop-opacity="0.7"/>
-          <stop offset="50%" stop-color="#F1D57C" stop-opacity="1"/>
-          <stop offset="70%" stop-color="#e77100" stop-opacity="0.7"/>
-          <stop offset="100%" stop-color="#7D4535" stop-opacity="0"/>
-        </linearGradient>
-        <filter id="blurBot" x="-10%" y="-50%" width="120%" height="200%">
-          <feGaussianBlur stdDeviation="8"/>
-        </filter>
-      </defs>
-      <!-- glow -->
-      <path d="M-60 5 Q600 110 1260 5" stroke="url(#arcGradBot)" stroke-width="28" fill="none" filter="url(#blurBot)" opacity="0.6"/>
-      <!-- linha nítida -->
-      <path d="M-60 5 Q600 110 1260 5" stroke="url(#arcGradBot)" stroke-width="2" fill="none"/>
-    </svg>
-  </div>
-
-  <!-- Conteúdo central -->
+  <div class="container">
   <div class="pp-inner">
     <div class="pp-label">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -1165,6 +1117,7 @@
         <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
       </div>
     </a>
+  </div>
   </div>
 
 </section>
@@ -1235,28 +1188,6 @@
           <div class="faq-plus"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
         </div>
         <div class="faq-body"><div class="faq-body-inner">Sim. Chame no WhatsApp e nossa equipe responde todas as suas dúvidas antes de marcar qualquer horário. Sem pressão.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 11. CTA FINAL -->
-<section class="cta-final bg-marrom">
-  <div class="container">
-    <div class="cta-final-content">
-      <span class="section-label">Dê o primeiro passo</span>
-      <h2 class="section-title">Pronto(a) para viver sem dor?</h2>
-      <p class="section-sub" style="max-width:480px;">Agende sua avaliação com Câmera Termal. Protocolo exclusivo, atendimento premium e foco no resultado definitivo.</p>
-      <div class="cta-urgency">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        Vagas limitadas nesta semana
-      </div>
-      <div class="cta-btns">
-        <a href="https://api.whatsapp.com/send/?phone=554384137634&text=Ol%C3%A1%2C+tudo+bem%3F+Gostaria+de+agendar+uma+avalia%C3%A7%C3%A3o+na+Vibe+Terapias" class="btn btn-primary" target="_blank" rel="noopener">
-          <svg class="icon-wpp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-          Quero minha avaliação agora
-        </a>
-        <a href="#faq" class="btn btn-outline-white">Ver perguntas frequentes</a>
       </div>
     </div>
   </div>
@@ -1449,7 +1380,8 @@
     const VISIBLE = 3;
 
     function slideWidth() {
-      return track.parentElement.offsetWidth + 16;
+      const c = track.querySelector('.tcard');
+      return c ? (c.offsetWidth + 16) * VISIBLE : 708;
     }
 
     function totalSteps() {
