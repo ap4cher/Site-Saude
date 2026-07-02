@@ -7,10 +7,10 @@
   <meta name="description" content="Câmera Termal identifica a raiz exata da sua dor. Protocolo exclusivo de liberação miofascial que elimina o problema — não só o sintoma. Avaliação gratuita.">
   <style>
     @font-face { font-family:'CharlotteVeronica'; src:url('Assets/Fonts/CHARLOTTE VERONICA BOLD.OTF') format('opentype'); font-weight:700; font-style:normal; font-display:swap; }
-    @font-face { font-family:'Poppins'; src:url('assets/fonts/poppins-regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
-    @font-face { font-family:'Poppins'; src:url('assets/fonts/poppins-medium.ttf') format('truetype'); font-weight:500; font-style:normal; font-display:swap; }
-    @font-face { font-family:'Poppins'; src:url('assets/fonts/poppins-bold.ttf') format('truetype'); font-weight:700; font-style:normal; font-display:swap; }
-    @font-face { font-family:'Poppins'; src:url('assets/fonts/poppins-extrabold.ttf') format('truetype'); font-weight:800; font-style:normal; font-display:swap; }
+    @font-face { font-family:'Poppins'; src:url('Assets/Fonts/Poppins-Regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
+    @font-face { font-family:'Poppins'; src:url('Assets/Fonts/Poppins-Medium.ttf') format('truetype'); font-weight:500; font-style:normal; font-display:swap; }
+    @font-face { font-family:'Poppins'; src:url('Assets/Fonts/Poppins-Bold.ttf') format('truetype'); font-weight:700; font-style:normal; font-display:swap; }
+    @font-face { font-family:'Poppins'; src:url('Assets/Fonts/Poppins-Bold.ttf') format('truetype'); font-weight:800; font-style:normal; font-display:swap; }
 
     :root {
       --primary:#7D4535; --primary-dark:#4E2518; --primary-light:#F5EBE6;
@@ -206,8 +206,11 @@
     .beneficio-desc{font-size:.83rem;color:var(--text-medium);line-height:1.6;}
 
     /* BARRA DIVISÓRIA */
-    .barra-wrap{width:100%;background:#FAF7F4;padding:40px 0 16px;}
-    .barra-divider{display:block;width:44%;max-width:400px;height:auto;margin:0 auto;}
+    .barra-wrap{width:100%;background:#FAF7F4;padding:32px 0;}
+    .barra-divider{display:flex;align-items:center;justify-content:center;gap:10px;max-width:400px;margin:0 auto;}
+    .barra-divider::before,.barra-divider::after{content:'';flex:1;height:1.5px;background:linear-gradient(to right,transparent,var(--border));}
+    .barra-divider::after{background:linear-gradient(to left,transparent,var(--border));}
+    .barra-divider-icon{width:10px;height:10px;border-radius:50%;background:var(--primary);opacity:.45;}
     .como-funciona{padding-bottom:0!important;}
     .tratamos{padding-top:0!important;}
 
@@ -627,7 +630,7 @@
 </section>
 
 <!-- BARRA DIVISÓRIA -->
-<div class="barra-wrap"><img src="Assets/Barra.svg" class="barra-divider" alt="" aria-hidden="true"></div>
+<div class="barra-wrap"><div class="barra-divider" aria-hidden="true"><span class="barra-divider-icon"></span></div></div>
 
 <!-- 6. TRATAMOS MOSAICO -->
 <section class="tratamos section" id="sobre">
