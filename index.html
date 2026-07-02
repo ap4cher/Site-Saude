@@ -73,28 +73,84 @@
     @media(min-width:768px){.header-nav{display:flex;}}
 
     /* HERO */
-    .hero{min-height:100svh;display:flex;align-items:flex-end;padding-top:calc(var(--bar-h) + 64px);padding-bottom:40px;position:relative;overflow:hidden;background:var(--primary-dark);}
-    .hero-slideshow{position:absolute;inset:0;z-index:0;overflow:hidden;}
-    .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center right;background-repeat:no-repeat;opacity:0;transition:opacity 1.2s ease-in-out;}
-    .hero-slide.active{opacity:.8;}
-    .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,#825044 0%,#825044 28%,rgba(130,80,68,.85) 45%,rgba(130,80,68,.40) 65%,rgba(130,80,68,.10) 82%,transparent 100%);z-index:1;}
-    .hero-bg-color{position:absolute;inset:0;background:#825044;z-index:-1;}
-    .hero-content{position:relative;z-index:2;width:100%;}
-    .hero-badge{display:inline-flex;align-items:center;gap:7px;background:transparent;border:1.5px solid #fffad3;color:#fffad3;font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:50px;margin-bottom:20px;}
-    .hero-badge::before{content:'';width:5px;height:5px;background:#fffad3;border-radius:50%;flex-shrink:0;}
-    .hero-title{font-family:var(--font-display);font-size:2.15rem;font-weight:400;color:white;line-height:1.14;margin-bottom:14px;}
-    .hero-title .highlight{font-family:var(--font-display);font-weight:400;font-style:italic;color:#fffad3;}
-    .hero-tagline{font-family:'Poppins',system-ui,sans-serif;font-size:1rem;font-weight:400;color:rgba(255,255,255,.78);margin-bottom:20px;line-height:1.6;}
-    .hero-bullets{display:flex;flex-direction:column;gap:8px;margin-bottom:28px;}
-    .hero-bullet{display:flex;align-items:center;gap:10px;font-size:.88rem;color:rgba(255,255,255,.82);font-weight:400;}
-    .hero-bullet::before{content:'';width:7px;height:7px;border-radius:50%;background:#fffad3;flex-shrink:0;}
-    .hero-ctas{display:flex;flex-direction:column;gap:12px;margin-bottom:36px;}
-    .hero-ctas .btn{width:100%;}
-    .hero-stats{display:flex;align-items:center;gap:0;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);flex-wrap:nowrap;}
-    .hero-stat{flex:1;text-align:center;}
-    .hero-stat-num{font-family:var(--font-display);font-size:1.5rem;font-weight:400;color:white;line-height:1;}
-    .hero-stat-label{font-size:.7rem;color:rgba(255,255,255,.50);margin-top:3px;line-height:1.4;font-weight:400;}
-    .hero-stat-divider{width:1px;height:32px;background:rgba(255,255,255,.15);flex-shrink:0;}
+    .hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:calc(var(--bar-h) + 80px);padding-bottom:60px;position:relative;overflow:hidden;background:#3B1608;text-align:center;}
+
+    /* raios de luz verticais */
+    .hero::before{content:'';position:absolute;inset:0;background:
+      radial-gradient(ellipse 60% 55% at 50% -5%,rgba(241,213,124,.13) 0%,transparent 70%),
+      repeating-linear-gradient(to right,transparent 0px,transparent 72px,rgba(255,250,211,.025) 73px,rgba(255,250,211,.025) 74px);
+      z-index:0;pointer-events:none;}
+    .hero::after{content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse 80% 40% at 50% 100%,rgba(78,37,24,.95) 0%,transparent 70%);
+      z-index:0;pointer-events:none;}
+
+    .hero-inner{position:relative;z-index:2;width:100%;display:flex;flex-direction:column;align-items:center;}
+
+    /* badge */
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,250,211,.08);border:1px solid rgba(255,250,211,.28);color:#fffad3;font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:7px 18px;border-radius:50px;margin-bottom:28px;backdrop-filter:blur(8px);}
+    .hero-badge-dot{width:6px;height:6px;background:#fffad3;border-radius:50%;animation:pulse-dot 1.5s infinite;flex-shrink:0;}
+
+    /* headline */
+    .hero-title{font-family:var(--font-display);font-size:2.4rem;font-weight:400;color:white;line-height:1.1;margin-bottom:18px;max-width:680px;}
+    .hero-title .highlight{color:#F1D57C;font-style:italic;}
+
+    /* sub */
+    .hero-tagline{font-size:.98rem;color:rgba(255,255,255,.68);line-height:1.7;max-width:520px;margin:0 auto 32px;}
+
+    /* CTA */
+    .hero-cta-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:60px;}
+
+    /* cards flutuantes */
+    .hero-cards{display:grid;grid-template-columns:1fr;gap:14px;width:100%;max-width:340px;margin:0 auto;}
+    .hcard{border-radius:20px;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);overflow:hidden;}
+
+    /* card esquerdo — prova social */
+    .hcard-left{background:rgba(255,255,255,.07);border:1px solid rgba(255,250,211,.15);padding:20px 22px;}
+    .hcard-left-label{font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,250,211,.55);margin-bottom:4px;}
+    .hcard-left-title{font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:14px;}
+    .hcard-left-num{font-family:var(--font-display);font-size:2.6rem;color:#F1D57C;line-height:1;}
+    .hcard-left-sub{font-size:.7rem;color:rgba(255,255,255,.45);margin-top:3px;margin-bottom:16px;}
+    .hcard-left-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(37,211,102,.14);border:1px solid rgba(37,211,102,.3);color:#7DE8A0;font-size:.7rem;font-weight:600;padding:5px 10px;border-radius:50px;}
+    .hcard-left-pill::before{content:'';width:5px;height:5px;background:#7DE8A0;border-radius:50%;flex-shrink:0;}
+
+    /* card centro — principal */
+    .hcard-center{background:rgba(255,255,255,.10);border:1px solid rgba(255,250,211,.22);padding:0;position:relative;}
+    .hcard-center-top{padding:20px 22px 16px;}
+    .hcard-center-brand{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,250,211,.55);margin-bottom:6px;}
+    .hcard-center-title{font-family:var(--font-display);font-size:1.45rem;color:white;line-height:1.2;margin-bottom:14px;}
+    .hcard-center-title span{color:#F1D57C;}
+    .hcard-center-row{display:flex;align-items:center;gap:14px;margin-bottom:0;}
+    .hcard-ring{position:relative;width:54px;height:54px;flex-shrink:0;}
+    .hcard-ring svg{width:54px;height:54px;transform:rotate(-90deg);}
+    .hcard-ring-track{fill:none;stroke:rgba(255,255,255,.12);stroke-width:4;}
+    .hcard-ring-fill{fill:none;stroke:#F1D57C;stroke-width:4;stroke-linecap:round;stroke-dasharray:138;stroke-dashoffset:14;}
+    .hcard-ring-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;color:white;}
+    .hcard-ring-text{font-size:.78rem;color:rgba(255,255,255,.65);line-height:1.55;}
+    .hcard-center-img{width:100%;height:110px;object-fit:cover;object-position:center;display:block;filter:brightness(.9) saturate(1.1);}
+    .hcard-center-img-placeholder{width:100%;height:110px;background:linear-gradient(135deg,rgba(125,69,53,.5),rgba(78,37,24,.8));display:flex;align-items:center;justify-content:center;}
+    .hcard-center-img-placeholder svg{width:44px;height:44px;stroke:rgba(255,250,211,.3);fill:none;stroke-width:1.2;}
+
+    /* card direito — diagnóstico */
+    .hcard-right{background:rgba(255,255,255,.07);border:1px solid rgba(255,250,211,.15);padding:20px 22px;}
+    .hcard-right-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(241,213,124,.12);border:1px solid rgba(241,213,124,.25);color:#F1D57C;font-size:.64rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:50px;margin-bottom:12px;}
+    .hcard-right-tag::before{content:'';width:5px;height:5px;background:#F1D57C;border-radius:50%;flex-shrink:0;}
+    .hcard-right-label{font-size:.65rem;color:rgba(255,255,255,.4);margin-bottom:3px;}
+    .hcard-right-value{font-family:var(--font-display);font-size:1.3rem;color:white;line-height:1.15;margin-bottom:2px;}
+    .hcard-right-detail{font-size:.72rem;color:#7DE8A0;font-weight:600;margin-bottom:14px;}
+    .hcard-right-badge{display:flex;align-items:center;gap:7px;font-size:.72rem;color:rgba(255,255,255,.55);}
+    .hcard-right-badge svg{width:13px;height:13px;stroke:#F1D57C;fill:none;stroke-width:2;flex-shrink:0;}
+
+    /* responsivo hero cards */
+    @media(min-width:640px){
+      .hero-title{font-size:3.2rem;}
+      .hero-cards{grid-template-columns:1fr 1.2fr 1fr;max-width:860px;align-items:start;}
+      .hcard-center{margin-top:-20px;}
+      .hero-cta-wrap{flex-direction:row;justify-content:center;}
+    }
+    @media(min-width:1024px){
+      .hero-title{font-size:4rem;}
+      .hero-cards{max-width:1000px;}
+    }
 
     /* PROOF STRIP */
     .proof-strip{background:var(--primary-light);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:34px 0;}
@@ -320,16 +376,11 @@
     @keyframes chatSlideIn{from{opacity:0;transform:translateX(8px)}to{opacity:1;transform:translateX(0)}}
 
     /* RESPONSIVO */
-    @media(max-width:639px){.hero{align-items:center;}}
+    @media(max-width:639px){.hero-cta-wrap .btn{width:100%;}}
     @media(min-width:640px){
       :root{--space-section:72px;--space-container:32px;}
       .section-title{font-size:2.2rem;}
       .header-inner{height:68px;}
-      .hero{align-items:center;padding-bottom:56px;}
-      .hero-title{font-size:2.8rem;}
-      .hero-tagline{font-size:1.15rem;}
-      .hero-ctas{flex-direction:row;}
-      .hero-ctas .btn{width:auto;}
       .beneficios-grid{display:grid;grid-template-columns:1fr 1fr;}
       .mosaic-grid{grid-template-columns:repeat(3,1fr);gap:12px;}
       .mosaic-card-h2{display:block;}
@@ -435,46 +486,75 @@
 
 <!-- 1. HERO -->
 <section class="hero" id="hero">
-  <div class="hero-slideshow">
-    <div class="hero-slide active" style="background-image:url('Assets/Fotos/Hero.webp')"></div>
-  </div>
-  <div class="hero-bg-color"></div>
-  <div class="container">
-    <div class="hero-content">
-      <div class="hero-badge">Câmera Termal · Diagnóstico Exclusivo</div>
-      <h1 class="hero-title">
-        Você não precisa mais<br>
-        <span class="highlight">viver com essa dor.</span>
-      </h1>
-      <p class="hero-tagline">Nossa Câmera Termal identifica a raiz exata da sua dor — e nosso protocolo exclusivo de liberação miofascial elimina de vez o problema, não só o sintoma.</p>
-      <div class="hero-bullets">
-        <div class="hero-bullet">Diagnóstico termal preciso já na primeira sessão</div>
-        <div class="hero-bullet">Protocolo personalizado para a sua dor específica</div>
-        <div class="hero-bullet">Alívio desde a primeira sessão, resultado duradouro</div>
+  <div class="hero-inner container">
+
+    <!-- badge -->
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Câmera Termal · Diagnóstico Exclusivo
+    </div>
+
+    <!-- headline centralizado -->
+    <h1 class="hero-title">
+      Você não precisa mais<br>
+      <span class="highlight">viver com essa dor.</span>
+    </h1>
+
+    <p class="hero-tagline">
+      Nossa Câmera Termal encontra a raiz exata da sua dor — e nosso protocolo exclusivo de liberação miofascial elimina o problema de vez, não só o sintoma.
+    </p>
+
+    <!-- CTA centralizado -->
+    <div class="hero-cta-wrap">
+      <a href="https://api.whatsapp.com/send/?phone=554384137634&text=Ol%C3%A1%2C+quero+agendar+minha+avalia%C3%A7%C3%A3o+com+C%C3%A2mera+Termal+na+Vibe+Terapias" class="btn btn-primary" target="_blank" rel="noopener">
+        <svg class="icon-wpp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Quero minha avaliação gratuita
+      </a>
+      <a href="#como-funciona" class="btn btn-outline-white">Ver como funciona</a>
+    </div>
+
+    <!-- 3 cards flutuantes -->
+    <div class="hero-cards">
+
+      <!-- card esquerdo: prova social -->
+      <div class="hcard hcard-left">
+        <div class="hcard-left-label">Última atualização</div>
+        <div class="hcard-left-title">Pessoas impactadas</div>
+        <div class="hcard-left-num">+45 mil</div>
+        <div class="hcard-left-sub">e crescendo toda semana</div>
+        <div class="hcard-left-pill">98% de satisfação</div>
       </div>
-      <div class="hero-ctas">
-        <a href="https://api.whatsapp.com/send/?phone=554384137634&text=Ol%C3%A1%2C+quero+agendar+minha+avalia%C3%A7%C3%A3o+com+C%C3%A2mera+Termal+na+Vibe+Terapias" class="btn btn-primary" target="_blank" rel="noopener">
-          <svg class="icon-wpp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-          Quero minha avaliação com Câmera Termal
-        </a>
-        <a href="#como-funciona" class="btn btn-outline-white">Ver como funciona</a>
-      </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="hero-stat-num">+45 mil</div>
-          <div class="hero-stat-label">Pessoas impactadas</div>
+
+      <!-- card centro: câmera termal (destaque) -->
+      <div class="hcard hcard-center">
+        <div class="hcard-center-top">
+          <div class="hcard-center-brand">Vibe Smart Diagnóstico</div>
+          <h2 class="hcard-center-title">Identificando a raiz <span>da sua dor</span></h2>
+          <div class="hcard-center-row">
+            <div class="hcard-ring">
+              <svg viewBox="0 0 54 54"><circle class="hcard-ring-track" cx="27" cy="27" r="22"/><circle class="hcard-ring-fill" cx="27" cy="27" r="22"/></svg>
+              <div class="hcard-ring-label">90%</div>
+            </div>
+            <p class="hcard-ring-text">Pacientes sentem alívio já na <strong style="color:white;">primeira sessão</strong></p>
+          </div>
         </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <div class="hero-stat-num">98%</div>
-          <div class="hero-stat-label">de Satisfação</div>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <div class="hero-stat-num">8</div>
-          <div class="hero-stat-label">Unidades SP·PR·SC</div>
+        <div class="hcard-center-img-placeholder">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
         </div>
       </div>
+
+      <!-- card direito: diagnóstico encontrado -->
+      <div class="hcard hcard-right">
+        <div class="hcard-right-tag">Diagnóstico Encontrado</div>
+        <div class="hcard-right-label">Resultado termal</div>
+        <div class="hcard-right-value">Tensão Miofascial<br>Identificada</div>
+        <div class="hcard-right-detail">Aliviada desde a 1ª sessão</div>
+        <div class="hcard-right-badge">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Protocolo exclusivo aplicado
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
