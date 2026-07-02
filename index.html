@@ -259,7 +259,7 @@
       .cf-media{min-height:480px;}
     }
     @media(min-width:1024px){
-      .cf-layout{grid-template-columns:5fr 6fr;}
+      .cf-layout{grid-template-columns:1fr 1fr;}
     }
 
     /* TRATAMOS SLIDER */
@@ -281,11 +281,10 @@
     /* card — cores claras invertidas */
     .tcard{background:linear-gradient(145deg,#4E2518,#7D4535);border:1px solid rgba(125,69,53,.2);border-radius:22px;flex:0 0 280px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 8px 32px rgba(125,69,53,.18);transition:transform .25s,box-shadow .25s;}
     .tcard:hover{transform:translateY(-4px);box-shadow:0 14px 44px rgba(125,69,53,.28);}
-    .tcard-photo{width:100%;height:210px;background:linear-gradient(135deg,rgba(125,69,53,.5),rgba(59,22,8,.9));flex-shrink:0;position:relative;overflow:hidden;}
-    .tcard-photo-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s ease;}
-    .tcard:hover .tcard-photo-img{transform:scale(1.05);}
-    .tcard-photo-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
-    .tcard-photo-placeholder svg{width:36px;height:36px;stroke:rgba(255,250,211,.18);fill:none;stroke-width:1;}
+    .tcard-photo{width:100%;height:210px;flex-shrink:0;position:relative;overflow:hidden;}
+    .tcard-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s ease;}
+    .tcard:hover .tcard-photo img{transform:scale(1.05);}
+    .tcard-ornament img{filter:brightness(0) invert(1);opacity:.55;}
     .tcard-body{padding:22px 20px 24px;flex:1;display:flex;flex-direction:column;}
     .tcard-ornament{display:flex;justify-content:center;margin-bottom:14px;}
     .tcard-ornament svg{width:22px;height:22px;fill:none;stroke:rgba(241,213,124,.5);stroke-width:1.2;}
@@ -809,25 +808,22 @@
 
     <div class="cf-layout">
 
-      <!-- coluna esquerda: área de foto + notificação -->
+      <!-- coluna esquerda: foto + card resultado sobreposto -->
       <div class="cf-media">
         <img src="Assets/Fotos/Como Funciona.webp" alt="Atendimento Vibe Terapias" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;">
         <div class="cf-notif">
-          <div class="cf-notif-inner">
-            <div class="cf-notif-logo">
-              <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <div class="cf-result" style="margin:0;background:rgba(241,213,124,.12);border-color:rgba(241,213,124,.35);">
+            <div class="cf-result-icon">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <div class="cf-notif-text">
-              <div class="cf-notif-title">Vibe Terapias · Câmera Termal</div>
-              <div class="cf-notif-body">Diagnóstico concluído! <strong>Tensão miofascial cervical identificada.</strong> Protocolo personalizado pronto para iniciar.</div>
-            </div>
+            <p class="cf-result-text"><strong>Resultado:</strong> alívio desde a 1ª sessão, diagnóstico visual preciso e fim definitivo das dores — não só o sintoma.</p>
           </div>
         </div>
       </div>
 
-      <!-- coluna direita: steps + resultado -->
-      <div>
-        <div class="cf-steps" id="stepsGrid">
+      <!-- coluna direita: steps -->
+      <div style="display:flex;align-items:center;">
+        <div class="cf-steps" id="stepsGrid" style="width:100%;">
 
           <div class="cf-step">
             <div class="cf-step-left">
@@ -874,14 +870,6 @@
 
         </div>
 
-        <!-- card resultado -->
-        <div class="cf-result">
-          <div class="cf-result-icon">
-            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <p class="cf-result-text"><strong>Resultado:</strong> alívio desde a 1ª sessão, diagnóstico visual preciso e fim definitivo das dores — não só o sintoma.</p>
-        </div>
-
       </div>
     </div>
   </div>
@@ -916,10 +904,10 @@
       <!-- card 1 -->
       <div class="tcard">
         <div class="tcard-photo">
-          <div class="tcard-photo-img" style="background-image:url('Assets/Fotos/Dores/Coluna.webp')"></div>
+          <img src="Assets/Fotos/Dores/Coluna.webp" alt="Dor na Coluna">
         </div>
         <div class="tcard-body">
-          <div class="tcard-ornament"><img src="Assets/Icons/Sobre/1.svg" alt="" style="width:28px;height:28px;object-fit:contain;filter:brightness(0) invert(1) opacity(.6);"></div>
+          <div class="tcard-ornament"><img src="Assets/Icons/Sobre/1.svg" alt=""></div>
           <div class="tcard-label">Tratamento 01</div>
           <h3 class="tcard-title">Dor na Coluna</h3>
           <p class="tcard-desc">Aquela pontada que aparece do nada e faz você segurar a respiração. A Câmera Termal identifica a origem real.</p>
@@ -932,10 +920,10 @@
       <!-- card 2 -->
       <div class="tcard">
         <div class="tcard-photo">
-          <div class="tcard-photo-img" style="background-image:url('Assets/Fotos/Dores/Hérnia.webp')"></div>
+          <img src="Assets/Fotos/Dores/Hérnia.webp" alt="Hérnia de Disco">
         </div>
         <div class="tcard-body">
-          <div class="tcard-ornament"><img src="Assets/Icons/Sobre/2.svg" alt="" style="width:28px;height:28px;object-fit:contain;filter:brightness(0) invert(1) opacity(.6);"></div>
+          <div class="tcard-ornament"><img src="Assets/Icons/Sobre/2.svg" alt=""></div>
           <div class="tcard-label">Tratamento 02</div>
           <h3 class="tcard-title">Hérnia de Disco</h3>
           <p class="tcard-desc">Viver com medo de "travar" a cada movimento é exaustivo. Tratamos a causa — não o sintoma.</p>
@@ -948,10 +936,10 @@
       <!-- card 3 -->
       <div class="tcard">
         <div class="tcard-photo">
-          <div class="tcard-photo-img" style="background-image:url('Assets/Fotos/Dores/Pescoço.webp')"></div>
+          <img src="Assets/Fotos/Dores/Pescoço.webp" alt="Tensão no Pescoço">
         </div>
         <div class="tcard-body">
-          <div class="tcard-ornament"><img src="Assets/Icons/Sobre/3.svg" alt="" style="width:28px;height:28px;object-fit:contain;filter:brightness(0) invert(1) opacity(.6);"></div>
+          <div class="tcard-ornament"><img src="Assets/Icons/Sobre/3.svg" alt=""></div>
           <div class="tcard-label">Tratamento 03</div>
           <h3 class="tcard-title">Tensão no Pescoço</h3>
           <p class="tcard-desc">Quando o pescoço queima e os ombros travam sem você saber o porquê — nossa termografia mostra a raiz.</p>
@@ -964,10 +952,10 @@
       <!-- card 4 -->
       <div class="tcard">
         <div class="tcard-photo">
-          <div class="tcard-photo-img" style="background-image:url('Assets/Fotos/Dores/Enxaqueca.webp')"></div>
+          <img src="Assets/Fotos/Dores/Enxaqueca.webp" alt="Enxaqueca">
         </div>
         <div class="tcard-body">
-          <div class="tcard-ornament"><img src="Assets/Icons/Sobre/1.svg" alt="" style="width:28px;height:28px;object-fit:contain;filter:brightness(0) invert(1) opacity(.6);"></div>
+          <div class="tcard-ornament"><img src="Assets/Icons/Sobre/1.svg" alt=""></div>
           <div class="tcard-label">Tratamento 04</div>
           <h3 class="tcard-title">Enxaqueca</h3>
           <p class="tcard-desc">Quando seu dia para no meio e a luz vira sua inimiga. Identificamos a tensão que nenhum exame convencional encontra.</p>
@@ -980,10 +968,10 @@
       <!-- card 5 -->
       <div class="tcard">
         <div class="tcard-photo">
-          <div class="tcard-photo-img" style="background-image:url('Assets/Fotos/Dores/Fibromialgia.webp')"></div>
+          <img src="Assets/Fotos/Dores/Fibromialgia.webp" alt="Fibromialgia">
         </div>
         <div class="tcard-body">
-          <div class="tcard-ornament"><img src="Assets/Icons/Sobre/2.svg" alt="" style="width:28px;height:28px;object-fit:contain;filter:brightness(0) invert(1) opacity(.6);"></div>
+          <div class="tcard-ornament"><img src="Assets/Icons/Sobre/2.svg" alt=""></div>
           <div class="tcard-label">Tratamento 05</div>
           <h3 class="tcard-title">Fibromialgia</h3>
           <p class="tcard-desc">Dói no corpo todo e o cansaço não tem fim. Nosso protocolo de liberação miofascial trata a origem da dor generalizada.</p>
@@ -996,10 +984,10 @@
       <!-- card 6 -->
       <div class="tcard">
         <div class="tcard-photo">
-          <div class="tcard-photo-img" style="background-image:url('Assets/Fotos/Dores/Bruxismo.webp')"></div>
+          <img src="Assets/Fotos/Dores/Bruxismo.webp" alt="Bruxismo">
         </div>
         <div class="tcard-body">
-          <div class="tcard-ornament"><img src="Assets/Icons/Sobre/3.svg" alt="" style="width:28px;height:28px;object-fit:contain;filter:brightness(0) invert(1) opacity(.6);"></div>
+          <div class="tcard-ornament"><img src="Assets/Icons/Sobre/3.svg" alt=""></div>
           <div class="tcard-label">Tratamento 06</div>
           <h3 class="tcard-title">Bruxismo</h3>
           <p class="tcard-desc">Acordar com rosto travado e mandíbula cansada não é normal. Tratamos a tensão miofascial que causa o bruxismo.</p>
@@ -1012,10 +1000,10 @@
       <!-- card 7 -->
       <div class="tcard">
         <div class="tcard-photo">
-          <div class="tcard-photo-img" style="background-image:url('Assets/Fotos/Dores/Pernas.webp')"></div>
+          <img src="Assets/Fotos/Dores/Pernas.webp" alt="Dores nas Pernas">
         </div>
         <div class="tcard-body">
-          <div class="tcard-ornament"><img src="Assets/Icons/Sobre/1.svg" alt="" style="width:28px;height:28px;object-fit:contain;filter:brightness(0) invert(1) opacity(.6);"></div>
+          <div class="tcard-ornament"><img src="Assets/Icons/Sobre/1.svg" alt=""></div>
           <div class="tcard-label">Tratamento 07</div>
           <h3 class="tcard-title">Dores nas Pernas</h3>
           <p class="tcard-desc">A fisgada que desce pela perna e piora a cada passo. Identificamos e tratamos o nervo ciático e tensões profundas.</p>
