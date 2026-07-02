@@ -216,12 +216,12 @@
     @media(min-width:900px){.repo-layout{grid-template-columns:55% 1fr;gap:16px;}}
 
     /* COMO FUNCIONA */
-    .como-funciona{background:linear-gradient(160deg,#3B1608 0%,#5C2C14 50%,#7D4535 100%);}
-    .cf-header{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-bottom:40px;}
+    .como-funciona{background:linear-gradient(160deg,#3B1608 0%,#5C2C14 50%,#7D4535 100%);padding-top:36px!important;}
+    .cf-header{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-bottom:28px;}
     .cf-header-title{font-family:var(--font-display);font-size:1.7rem;color:white;margin:0;}
     .cf-header-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(241,213,124,.10);border:1px solid rgba(241,213,124,.25);color:#F1D57C;font-size:.64rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:50px;white-space:nowrap;}
     .cf-header-badge::before{content:'';width:5px;height:5px;background:#F1D57C;border-radius:50%;flex-shrink:0;}
-    .cf-layout{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;}
+    .cf-layout{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;max-width:960px;margin:0 auto;}
     /* coluna esquerda — foto + notificação */
     .cf-media{position:relative;border-radius:22px;overflow:hidden;background:rgba(255,255,255,.06);border:1px solid rgba(255,250,211,.12);min-height:360px;display:flex;align-items:flex-end;}
     .cf-media-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:rgba(255,250,211,.18);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;}
@@ -241,7 +241,7 @@
     .cf-step-dot{width:10px;height:10px;border-radius:50%;background:#F1D57C;flex-shrink:0;margin-top:4px;transition:transform .3s,box-shadow .3s;}
     .cf-step:hover .cf-step-dot{transform:scale(1.4);box-shadow:0 0 10px rgba(241,213,124,.5);}
     .cf-step-line{width:2px;flex:1;min-height:32px;background:rgba(255,250,211,.12);margin-top:3px;background:repeating-linear-gradient(to bottom,rgba(255,250,211,.18) 0px,rgba(255,250,211,.18) 5px,transparent 5px,transparent 10px);}
-    .cf-step:last-of-type .cf-step-line{display:none;}
+    .cf-step:last-of-type .cf-step-line{min-height:16px;}
     .cf-step-body{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,250,211,.09);border-radius:14px;padding:14px 18px;margin-bottom:10px;transition:background .2s,border-color .2s;}
     .cf-step:hover .cf-step-body{background:rgba(255,255,255,.09);border-color:rgba(241,213,124,.2);}
     .cf-step-label{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(241,213,124,.6);margin-bottom:4px;}
@@ -861,6 +861,7 @@
           <div class="cf-step">
             <div class="cf-step-left">
               <span class="cf-step-dot"></span>
+              <div class="cf-step-line"></div>
             </div>
             <div class="cf-step-body">
               <div class="cf-step-label">Passo 04 · Acompanhamento</div>
