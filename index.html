@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Terapias — Descubra a Raiz da Sua Dor com Câmera Termal</title>
+  <meta name="description" content="Câmera Termal identifica a raiz exata da sua dor. Protocolo exclusivo de liberação miofascial que elimina o problema — não só o sintoma. Avaliação gratuita.">
+  <style>
+    @font-face { font-family:'CharlotteVeronica'; src:url('Assets/Fonts/CHARLOTTE VERONICA BOLD.OTF') format('opentype'); font-weight:700; font-style:normal; font-display:swap; }
+    @font-face { font-family:'Poppins'; src:url('assets/fonts/poppins-regular.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
+    @font-face { font-family:'Poppins'; src:url('assets/fonts/poppins-medium.ttf') format('truetype'); font-weight:500; font-style:normal; font-display:swap; }
+    @font-face { font-family:'Poppins'; src:url('assets/fonts/poppins-bold.ttf') format('truetype'); font-weight:700; font-style:normal; font-display:swap; }
+    @font-face { font-family:'Poppins'; src:url('assets/fonts/poppins-extrabold.ttf') format('truetype'); font-weight:800; font-style:normal; font-display:swap; }
+
+    :root {
+      --primary:#7D4535; --primary-dark:#4E2518; --primary-light:#F5EBE6;
+      --accent:#fffad3; --orange:#e77100;
+      --text-dark:#2A1409; --text-medium:#6B4035; --text-light:#9C7A6C;
+      --white:#FFFFFF; --bg:#FAF7F4; --border:#E8D5CC;
+      --shadow:0 4px 24px rgba(125,69,53,0.10); --shadow-lg:0 8px 48px rgba(125,69,53,0.15);
+      --radius:16px;
+      --font-display:'CharlotteVeronica','Poppins',Georgia,serif;
+      --font-body:'Poppins',system-ui,sans-serif;
+      --whatsapp:#25D366; --whatsapp-dark:#1DA851;
+      --space-section:56px; --space-container:20px;
+      --bar-h:44px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%;}
+    body{font-family:var(--font-body);color:var(--text-dark);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    ::selection{background:var(--primary-light);color:var(--primary-dark);}
+    img{max-width:100%;display:block;} a{text-decoration:none;color:inherit;} ul{list-style:none;}
+    .container{width:100%;padding:0 var(--space-container);margin:0 auto;}
+    .section{padding:var(--space-section) 0;}
+    .text-center{text-align:center;}
+    .section-label{display:block;font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+    .section-label::before{content:'— ';opacity:.6;} .section-label::after{content:' —';opacity:.6;}
+    .section-title{font-family:var(--font-display);font-size:1.85rem;font-weight:700;color:var(--text-dark);line-height:1.2;margin-bottom:16px;}
+    h1,.h1{font-family:var(--font-display)!important;}
+    .section-sub{font-size:.975rem;color:var(--text-medium);line-height:1.75;font-weight:400;}
+    .section-cta-center{text-align:center;margin-top:32px;}
+
+    /* BOTÕES */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:14px 28px;border-radius:50px;font-family:var(--font-body);font-weight:800;font-size:.95rem;cursor:pointer;border:none;transition:all .25s ease;text-decoration:none;white-space:nowrap;-webkit-tap-highlight-color:transparent;}
+    .btn-primary{position:relative;overflow:hidden;background:var(--whatsapp);color:white;box-shadow:0 4px 20px rgba(37,211,102,.30);}
+    .btn-primary:active{background:var(--whatsapp-dark);transform:scale(.98);}
+    .btn-primary::after{content:'';position:absolute;top:0;left:-75%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);transform:skewX(-20deg);animation:btn-shine 2.8s ease-in-out infinite;pointer-events:none;}
+    @keyframes btn-shine{0%{left:-75%}40%{left:130%}100%{left:130%}}
+    .btn-outline-white{background:transparent;color:white;border:2px solid rgba(255,255,255,.45);}
+    .btn-outline-white:active{background:rgba(255,255,255,.1);}
+    .icon-wpp{width:20px;height:20px;fill:currentColor;flex-shrink:0;}
+
+    /* URGENCY BAR */
+    .urgency-bar{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--bar-h);background:linear-gradient(90deg,#4E2518 0%,#7D4535 50%,#AD4900 100%);display:flex;align-items:center;justify-content:center;gap:10px;padding:0 16px;font-size:.78rem;font-weight:600;color:#fffad3;letter-spacing:.02em;}
+    .urgency-bar .pulse{width:8px;height:8px;border-radius:50%;background:#fffad3;animation:pulse-dot 1.5s infinite;flex-shrink:0;}
+    @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+    .urgency-bar a{color:#fffad3;text-decoration:underline;text-underline-offset:3px;}
+    .urgency-bar-text{display:none;}
+    @media(min-width:480px){.urgency-bar-text{display:inline;}}
+
+    /* HEADER */
+    .header{position:fixed;top:var(--bar-h);left:0;right:0;z-index:100;background:rgba(40,14,4,.38);border-bottom:1px solid rgba(255,255,255,.09);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);transition:background .45s ease,border-color .45s ease,box-shadow .45s ease;}
+    .header.on-light{background:rgba(255,248,243,.80);border-bottom:1px solid rgba(125,69,53,.14);}
+    .header.on-light.scrolled{box-shadow:0 4px 28px rgba(125,69,53,.10);}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px;}
+    .logo{display:flex;align-items:center;height:56px;flex-shrink:0;}
+    .logo img{height:100%;width:auto;display:block;}
+    .header-nav{display:none;gap:24px;align-items:center;flex:1;justify-content:center;}
+    .header-nav a{font-size:.83rem;font-weight:600;color:rgba(255,255,255,.88);transition:color .2s;white-space:nowrap;}
+    .header-nav a:hover{color:white;}
+    .header.on-light .header-nav a{color:var(--text-medium);}
+    .header.on-light .header-nav a:hover{color:var(--primary);}
+    @media(min-width:768px){.header-nav{display:flex;}}
+
+    /* HERO */
+    .hero{min-height:100svh;display:flex;align-items:flex-end;padding-top:calc(var(--bar-h) + 64px);padding-bottom:40px;position:relative;overflow:hidden;background:var(--primary-dark);}
+    .hero-slideshow{position:absolute;inset:0;z-index:0;overflow:hidden;}
+    .hero-slide{position:absolute;inset:0;background-size:cover;background-position:center right;background-repeat:no-repeat;opacity:0;transition:opacity 1.2s ease-in-out;}
+    .hero-slide.active{opacity:.8;}
+    .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,#825044 0%,#825044 28%,rgba(130,80,68,.85) 45%,rgba(130,80,68,.40) 65%,rgba(130,80,68,.10) 82%,transparent 100%);z-index:1;}
+    .hero-bg-color{position:absolute;inset:0;background:#825044;z-index:-1;}
+    .hero-content{position:relative;z-index:2;width:100%;}
+    .hero-badge{display:inline-flex;align-items:center;gap:7px;background:transparent;border:1.5px solid #fffad3;color:#fffad3;font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:50px;margin-bottom:20px;}
+    .hero-badge::before{content:'';width:5px;height:5px;background:#fffad3;border-radius:50%;flex-shrink:0;}
+    .hero-title{font-family:var(--font-display);font-size:2.15rem;font-weight:400;color:white;line-height:1.14;margin-bottom:14px;}
+    .hero-title .highlight{font-family:var(--font-display);font-weight:400;font-style:italic;color:#fffad3;}
+    .hero-tagline{font-family:'Poppins',system-ui,sans-serif;font-size:1rem;font-weight:400;color:rgba(255,255,255,.78);margin-bottom:20px;line-height:1.6;}
+    .hero-bullets{display:flex;flex-direction:column;gap:8px;margin-bottom:28px;}
+    .hero-bullet{display:flex;align-items:center;gap:10px;font-size:.88rem;color:rgba(255,255,255,.82);font-weight:400;}
+    .hero-bullet::before{content:'';width:7px;height:7px;border-radius:50%;background:#fffad3;flex-shrink:0;}
+    .hero-ctas{display:flex;flex-direction:column;gap:12px;margin-bottom:36px;}
+    .hero-ctas .btn{width:100%;}
+    .hero-stats{display:flex;align-items:center;gap:0;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);flex-wrap:nowrap;}
+    .hero-stat{flex:1;text-align:center;}
+    .hero-stat-num{font-family:var(--font-display);font-size:1.5rem;font-weight:400;color:white;line-height:1;}
+    .hero-stat-label{font-size:.7rem;color:rgba(255,255,255,.50);margin-top:3px;line-height:1.4;font-weight:400;}
+    .hero-stat-divider{width:1px;height:32px;background:rgba(255,255,255,.15);flex-shrink:0;}
+
+    /* PROOF STRIP */
+    .proof-strip{background:var(--primary-light);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:34px 0;}
+    .proof-inner{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 0;}
+    .proof-item{display:flex;flex-direction:column;align-items:stretch;flex:1;min-width:140px;padding:0 28px;}
+    .proof-num{font-family:var(--font-display);font-size:2.7rem;color:var(--primary-dark);line-height:1;text-align:center;display:block;}
+    .proof-label{font-size:.80rem;color:var(--text-medium);font-weight:500;letter-spacing:.04em;text-align:center;margin-top:5px;}
+    .proof-divider{width:1px;height:52px;background:rgba(125,69,53,.18);align-self:center;flex:none;}
+
+    /* BG MARROM */
+    .bg-marrom{background:linear-gradient(160deg,#5C2C14 0%,#3B1608 45%,#7D4535 100%);color:white;}
+
+    /* IDENTIFICA */
+    .identifica{background:linear-gradient(150deg,#3B1608 0%,#5C2C14 40%,#7D4535 80%,#924F41 100%);position:relative;overflow:hidden;}
+    .identifica::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(201,184,122,.08) 0%,transparent 65%);pointer-events:none;z-index:1;}
+    .identifica-bg-img{position:absolute;inset:0;background-image:url('Assets/Fotos/Hero.webp');background-size:cover;background-position:center;opacity:.10;z-index:0;pointer-events:none;}
+    .identifica>.container{position:relative;z-index:2;}
+    .identifica .section-label{color:var(--accent);}
+    .identifica .section-title{color:white;}
+    .identifica-intro{color:rgba(255,255,255,.65);font-size:.93rem;margin-top:-8px;margin-bottom:40px;max-width:540px;margin-left:auto;margin-right:auto;line-height:1.7;}
+    .identifica-grid{display:flex;flex-direction:column;gap:20px;}
+    .id-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,250,211,.14);border-radius:var(--radius);padding:28px 24px;backdrop-filter:blur(8px);}
+    .id-card-header{display:flex;align-items:center;gap:14px;margin-bottom:22px;}
+    .id-card-icon{width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,250,211,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .id-card-icon svg{width:20px;height:20px;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+    .id-card.pain .id-card-icon svg{stroke:#FFB07C;} .id-card.desire .id-card-icon svg{stroke:#7DE8A0;}
+    .id-card-title{font-weight:700;font-size:.9rem;letter-spacing:.04em;text-transform:uppercase;}
+    .id-card.pain .id-card-title{color:#FFD0B0;} .id-card.desire .id-card-title{color:#A5F3C0;}
+    .id-item{display:flex;align-items:flex-start;gap:12px;font-size:.88rem;color:rgba(255,255,255,.78);line-height:1.65;margin-bottom:12px;font-weight:400;}
+    .id-item:last-child{margin-bottom:0;}
+    .id-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:6px;}
+    .id-card.pain .id-dot{background:#FFB07C;} .id-card.desire .id-dot{background:#7DE8A0;}
+
+    /* REPOSICIONA */
+    .reposiciona{background:white;}
+    .reposiciona .section-title{color:var(--text-dark);}
+    .reposiciona-tagline{font-size:1.05rem;font-style:italic;color:var(--primary);font-weight:600;margin-bottom:32px;text-align:center;}
+    .reposiciona-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:600px;margin:0 auto;}
+    .reposiciona-col{background:var(--bg);border-radius:var(--radius);padding:22px 18px;}
+    .reposiciona-col.vibe{background:var(--primary-light);border:2px solid var(--primary);}
+    .reposiciona-col-title{font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:14px;}
+    .reposiciona-col.vibe .reposiciona-col-title{color:var(--primary);}
+    .reposiciona-item{display:flex;align-items:flex-start;gap:8px;font-size:.84rem;color:var(--text-medium);line-height:1.5;margin-bottom:10px;}
+    .reposiciona-item:last-child{margin-bottom:0;}
+    .reposiciona-item svg{width:14px;height:14px;flex-shrink:0;margin-top:3px;}
+    .reposiciona-col .reposiciona-item svg{stroke:#bbb;fill:none;stroke-width:2;}
+    .reposiciona-col.vibe .reposiciona-item{color:var(--primary-dark);}
+    .reposiciona-col.vibe .reposiciona-item svg{stroke:var(--primary);fill:none;stroke-width:2.5;}
+
+    /* COMO FUNCIONA */
+    .como-funciona{background:var(--bg);}
+    .steps-grid{display:flex;flex-direction:column;gap:0;margin-top:48px;}
+    .step{display:flex;gap:24px;align-items:flex-start;padding-bottom:40px;opacity:0;transform:translateY(36px);transition:opacity .6s ease,transform .6s ease;}
+    .step.visible{opacity:1;transform:translateY(0);}
+    .step:last-child{padding-bottom:0;}
+    .step-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;}
+    .step-num{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:white;font-family:var(--font-display);font-size:1.2rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 16px rgba(125,69,53,.30);transition:transform .4s ease .3s,box-shadow .4s ease .3s;}
+    .step.visible .step-num{transform:scale(1.08);box-shadow:0 6px 24px rgba(125,69,53,.45);}
+    .step-line{width:2px;flex:1;min-height:40px;background:var(--border);margin-top:6px;}
+    .step:last-child .step-line{display:none;}
+    .step-content{padding-top:12px;flex:1;}
+    .step-tag{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin-bottom:6px;display:block;}
+    .step-title{font-weight:700;font-size:1.05rem;color:var(--text-dark);margin-bottom:6px;line-height:1.3;}
+    .step-text{font-size:.84rem;color:var(--text-medium);line-height:1.7;font-weight:400;}
+    .step-highlight{display:inline-flex;align-items:center;gap:6px;background:var(--primary-light);border-radius:6px;padding:5px 10px;font-size:.76rem;font-weight:600;color:var(--primary-dark);margin-top:10px;}
+    .step-highlight svg{width:13px;height:13px;stroke:var(--primary);fill:none;stroke-width:2;}
+
+    /* TRATAMOS MOSAICO */
+    .tratamos{background:var(--bg);}
+    .tratamos-header{text-align:center;margin-bottom:28px;}
+    .mosaic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+    .mosaic-card{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:3/4;background:linear-gradient(145deg,var(--primary-dark),var(--primary));}
+    .mosaic-card::before{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,2,0,.88) 0%,rgba(0,0,0,.18) 55%,transparent 100%);z-index:1;}
+    .mosaic-card-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .55s ease;}
+    .mosaic-card:hover .mosaic-card-img{transform:scale(1.06);}
+    .mosaic-card-content{position:absolute;bottom:0;left:0;right:0;padding:16px;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:10px;}
+    .mosaic-card-text{flex:1;min-width:0;}
+    .mosaic-card-h1{font-family:var(--font-display);font-size:1.2rem;color:white;line-height:1.15;margin-bottom:4px;}
+    .mosaic-card-h2{font-size:.72rem;color:rgba(255,255,255,.70);line-height:1.45;font-weight:400;display:none;}
+    .mosaic-card-btn{width:38px;height:38px;border-radius:50%;flex-shrink:0;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;text-decoration:none;}
+    .mosaic-card-btn svg{width:15px;height:15px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+    .mosaic-card:hover .mosaic-card-btn{background:rgba(255,255,255,.28);border-color:rgba(255,255,255,.6);}
+    .tratamos-stats{display:flex;justify-content:center;gap:48px;margin-top:40px;padding-top:32px;border-top:2px solid var(--border);flex-wrap:wrap;}
+    .tratamos-stat{text-align:center;}
+    .tratamos-stat-num{font-family:var(--font-display);font-size:2.4rem;color:var(--primary-dark);line-height:1;}
+    .tratamos-stat-label{font-size:.82rem;color:var(--text-medium);font-weight:600;margin-top:5px;}
+
+    /* DEPOIMENTOS */
+    .depoimentos{background:linear-gradient(150deg,#3B1608 0%,#5C2C14 40%,#7D4535 80%,#924F41 100%);}
+    .depoimentos .section-label{color:rgba(255,250,211,.85)!important;}
+    .depoimentos .section-title{color:white;}
+    .vsl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px;}
+    .vsl-card{background:white;border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.28);}
+    .vsl-video-wrap{position:relative;width:100%;aspect-ratio:9/16;background:var(--primary-dark);}
+    .vsl-video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none;display:block;}
+    .vsl-info{padding:14px 16px 18px;}
+    .vsl-tratamento{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#974a00;margin-bottom:4px;}
+    .vsl-nome{font-weight:700;font-size:.95rem;color:var(--text-dark);}
+
+    /* BENEFÍCIOS */
+    .beneficios{background:white;}
+    .beneficios .section-title{color:var(--text-dark);}
+    .beneficios-grid{display:flex;flex-direction:column;gap:14px;margin-top:32px;}
+    .beneficio-item{display:flex;align-items:flex-start;gap:16px;background:var(--bg);border-radius:var(--radius);padding:20px 18px;}
+    .beneficio-icon{width:44px;height:44px;border-radius:10px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .beneficio-icon svg{width:22px;height:22px;stroke:var(--primary);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+    .beneficio-text{flex:1;}
+    .beneficio-title{font-weight:700;font-size:.95rem;color:var(--text-dark);margin-bottom:4px;}
+    .beneficio-desc{font-size:.83rem;color:var(--text-medium);line-height:1.6;}
+
+    /* BARRA DIVISÓRIA */
+    .barra-wrap{width:100%;background:#FAF7F4;padding:40px 0 16px;}
+    .barra-divider{display:block;width:44%;max-width:400px;height:auto;margin:0 auto;}
+    .como-funciona{padding-bottom:0!important;}
+    .tratamos{padding-top:0!important;}
+
+    /* OFERTA */
+    .oferta{background:white;}
+    .oferta-card{background:var(--bg);border:2px solid var(--primary);border-radius:var(--radius);padding:36px 28px;text-align:center;max-width:520px;margin:0 auto;box-shadow:var(--shadow-lg);}
+    .oferta-card .section-title{color:var(--primary-dark);margin-bottom:12px;}
+    .oferta-badges{display:flex;flex-direction:column;gap:10px;margin:22px 0;text-align:left;}
+    .oferta-badge-item{display:flex;align-items:center;gap:10px;font-size:.84rem;color:var(--text-medium);font-weight:500;}
+    .oferta-badge-item svg{width:16px;height:16px;stroke:var(--primary);fill:none;stroke-width:2.5;flex-shrink:0;}
+    .oferta-card .btn{width:100%;margin-top:8px;}
+
+    /* FAQ */
+    .faq{background:var(--bg);}
+    .faq-list{display:flex;flex-direction:column;gap:12px;margin-top:32px;}
+    .faq-item{background:white;border-radius:var(--radius);border:1.5px solid var(--border);overflow:hidden;cursor:pointer;transition:border-color .2s;}
+    .faq-item.open{border-color:var(--primary);}
+    .faq-trigger{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;gap:12px;-webkit-tap-highlight-color:transparent;user-select:none;}
+    .faq-q{font-weight:700;font-size:.9rem;color:var(--text-dark);line-height:1.4;}
+    .faq-chevron{width:20px;height:20px;stroke:var(--primary);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;transition:transform .25s ease;}
+    .faq-item.open .faq-chevron{transform:rotate(180deg);}
+    .faq-body{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+    .faq-item.open .faq-body{max-height:300px;}
+    .faq-body-inner{border-top:1px solid var(--border);padding:16px 20px 20px;font-size:.875rem;color:var(--text-medium);line-height:1.7;font-weight:400;}
+
+    /* CTA FINAL */
+    .cta-final{padding:var(--space-section) 0;text-align:center;position:relative;overflow:hidden;}
+    .cta-final::after{content:'';position:absolute;bottom:-20%;right:-10%;width:280px;height:280px;background:radial-gradient(circle,rgba(201,184,122,.12) 0%,transparent 70%);pointer-events:none;}
+    .cta-final-content{position:relative;z-index:1;}
+    .cta-final .section-label{color:#fffad3;}
+    .cta-final .section-title{color:white;}
+    .cta-final .section-sub{color:rgba(255,255,255,.68);margin:0 auto 28px;}
+    .cta-urgency{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.88);font-size:.8rem;padding:7px 16px;border-radius:50px;margin-bottom:24px;}
+    .cta-urgency svg{width:14px;height:14px;stroke:rgba(255,255,255,.88);fill:none;stroke-width:1.5;flex-shrink:0;}
+    .cta-btns{display:flex;flex-direction:column;gap:12px;}
+    .cta-btns .btn{width:100%;}
+
+    /* UNIDADES */
+    .unidades{background:linear-gradient(150deg,#3B1608 0%,#5C2C14 40%,#7D4535 80%,#924F41 100%);position:relative;overflow:hidden;}
+    .unidades-bg-img{position:absolute;inset:0;background-image:url('Assets/Fotos/Unidade.webp');background-size:cover;background-position:center;opacity:.07;z-index:0;pointer-events:none;}
+    .unidades>.container{position:relative;z-index:2;}
+    .unidades .section-label{color:rgba(255,250,211,.85)!important;}
+    .unidades .section-title{color:white;}
+    .unidades .section-sub{color:rgba(255,255,255,.60);}
+    .unidades-header{text-align:center;margin-bottom:36px;}
+    .unidades-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+    .unidade-card{background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.16);border-radius:var(--radius);padding:20px 18px;transition:border-color .2s,background .2s;}
+    .unidade-card:hover{border-color:rgba(255,255,255,.38);background:rgba(255,255,255,.13);}
+    .unidade-estado{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,250,211,.78);margin-bottom:5px;}
+    .unidade-cidade{font-weight:700;font-size:.95rem;color:white;margin-bottom:3px;}
+    .unidade-endereco{font-size:.78rem;color:white;line-height:1.55;font-weight:400;}
+    .unidade-link{display:inline-flex;align-items:center;justify-content:center;font-size:.76rem;font-weight:700;color:white;background:rgba(151,74,0,.32);border:1.5px solid #974a00;border-radius:50px;padding:7px 16px;margin-top:12px;transition:background .2s,border-color .2s;}
+    .unidade-link:hover{background:rgba(151,74,0,.55);border-color:#c06200;}
+
+    /* FOOTER */
+    .footer{background:#5c3e3e;color:rgba(255,255,255,.55);padding:36px 0 20px;}
+    .footer-grid{display:grid;grid-template-columns:1fr;gap:32px;margin-bottom:40px;}
+    .footer-logo{display:block;margin-bottom:14px;}
+    .footer-logo img{height:80px;width:auto;}
+    .footer-social{display:flex;gap:10px;margin-top:16px;}
+    .footer-social a{width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;text-decoration:none;-webkit-tap-highlight-color:transparent;}
+    .footer-social a img{width:22px;height:22px;object-fit:contain;}
+    .footer-col-title{font-weight:700;font-size:.8rem;color:rgba(255,255,255,.85);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px;}
+    .footer-nav{display:flex;flex-direction:column;gap:9px;}
+    .footer-nav a{font-size:.84rem;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s;}
+    .footer-nav a:hover{color:rgba(255,255,255,.88);}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:20px;text-align:center;font-size:.78rem;}
+
+    /* CHAT WIDGET */
+    .chat-widget{position:fixed;bottom:22px;right:18px;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:12px;}
+    .chat-box{width:300px;background:white;border-radius:16px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.20);display:none;flex-direction:column;}
+    .chat-box.open{display:flex;animation:chatSlideUp .28s ease;}
+    .chat-header{background:linear-gradient(135deg,var(--primary),var(--primary-dark));padding:14px 16px;display:flex;align-items:center;gap:12px;}
+    .chat-header-av{position:relative;width:44px;height:44px;flex-shrink:0;}
+    .chat-header-av img{width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid rgba(255,255,255,.45);display:block;}
+    .chat-dot{position:absolute;width:12px;height:12px;background:#25D366;border-radius:50%;border:2px solid white;bottom:1px;right:1px;}
+    .chat-header-info{flex:1;min-width:0;}
+    .chat-header-name{display:block;font-weight:700;font-size:.9rem;color:white;}
+    .chat-header-status{display:block;font-size:.72rem;color:rgba(255,255,255,.75);}
+    .chat-close-btn{background:rgba(255,255,255,.18);border:none;color:white;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:.82rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s;}
+    .chat-close-btn:hover{background:rgba(255,255,255,.30);}
+    .chat-messages{padding:16px;display:flex;flex-direction:column;gap:12px;background:#f8f5f3;min-height:80px;max-height:280px;overflow-y:auto;}
+    .chat-msg{display:flex;align-items:flex-start;gap:8px;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s;}
+    .chat-msg.visible{opacity:1;transform:translateY(0);}
+    .chat-msg-av{width:30px;height:30px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;}
+    .chat-msg-bubble{background:white;border-radius:4px 12px 12px 12px;padding:10px 13px;font-size:.83rem;color:#2A1409;line-height:1.55;box-shadow:0 1px 4px rgba(0,0,0,.08);}
+    .chat-typing{display:flex;align-items:center;gap:8px;}
+    .chat-typing-bubble{background:white;border-radius:4px 12px 12px 12px;padding:10px 14px;display:flex;gap:4px;align-items:center;box-shadow:0 1px 4px rgba(0,0,0,.08);}
+    .chat-typing-bubble span{width:7px;height:7px;border-radius:50%;background:#ccc;animation:typingDot 1.2s infinite;}
+    .chat-typing-bubble span:nth-child(2){animation-delay:.2s;}
+    .chat-typing-bubble span:nth-child(3){animation-delay:.4s;}
+    @keyframes typingDot{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-4px);opacity:1}}
+    .chat-cta{padding:12px 16px;background:white;border-top:1px solid #f0e8e4;}
+    .btn-chat-cta{display:block;width:100%;padding:14px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:white;text-align:center;border-radius:10px;font-weight:700;font-size:.88rem;text-decoration:none;transition:opacity .2s;}
+    .btn-chat-cta:hover{opacity:.88;}
+    .chat-bottom{display:flex;align-items:flex-end;gap:10px;}
+    .chat-preview{background:white;border-radius:12px 12px 4px 12px;padding:11px 28px 11px 13px;max-width:210px;position:relative;box-shadow:0 4px 20px rgba(0,0,0,.14);display:none;animation:chatSlideIn .32s ease;}
+    .chat-preview::after{content:'';position:absolute;bottom:16px;right:-8px;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:9px solid white;}
+    .chat-preview-close{position:absolute;top:6px;right:7px;background:none;border:none;color:#bbb;font-size:.72rem;cursor:pointer;padding:0;line-height:1;}
+    .chat-preview-close:hover{color:#888;}
+    .chat-preview-msg{font-size:.82rem;line-height:1.55;color:#2A1409;margin:0;transition:opacity .3s ease;}
+    .chat-avatar-btn{width:62px;height:62px;border-radius:50%;position:relative;display:block;flex-shrink:0;cursor:pointer;border:none;padding:0;background:none;box-shadow:0 4px 20px rgba(125,69,53,.40);transition:transform .2s;-webkit-tap-highlight-color:transparent;}
+    .chat-avatar-btn:hover{transform:scale(1.05);}
+    .chat-avatar-btn img{width:62px;height:62px;border-radius:50%;object-fit:cover;object-position:center top;display:block;border:3px solid white;}
+    .chat-avatar-dot{position:absolute;width:13px;height:13px;background:#25D366;border-radius:50%;border:2px solid white;bottom:2px;right:2px;}
+    @keyframes chatSlideUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes chatSlideIn{from{opacity:0;transform:translateX(8px)}to{opacity:1;transform:translateX(0)}}
+
+    /* RESPONSIVO */
+    @media(max-width:639px){.hero{align-items:center;}}
+    @media(min-width:640px){
+      :root{--space-section:72px;--space-container:32px;}
+      .section-title{font-size:2.2rem;}
+      .header-inner{height:68px;}
+      .hero{align-items:center;padding-bottom:56px;}
+      .hero-title{font-size:2.8rem;}
+      .hero-tagline{font-size:1.15rem;}
+      .hero-ctas{flex-direction:row;}
+      .hero-ctas .btn{width:auto;}
+      .beneficios-grid{display:grid;grid-template-columns:1fr 1fr;}
+      .mosaic-grid{grid-template-columns:repeat(3,1fr);gap:12px;}
+      .mosaic-card-h2{display:block;}
+      .vsl-grid{gap:20px;}
+      .cta-btns{flex-direction:row;justify-content:center;}
+      .cta-btns .btn{width:auto;}
+      .reposiciona-grid{gap:20px;}
+    }
+    @media(min-width:1024px){
+      :root{--space-section:96px;--space-container:24px;}
+      .container{max-width:1200px;}
+      .section-title{font-size:2.8rem;}
+      .header-inner{height:72px;}
+      .logo{height:62px;}
+      .hero{align-items:center;padding-bottom:72px;}
+      .hero-content{max-width:660px;}
+      .hero-title{font-size:3.8rem;}
+      .hero-tagline{font-size:1.25rem;}
+      .hero-stat-num{font-size:1.9rem;}
+      .proof-inner{flex-wrap:nowrap;}
+      .identifica-grid{flex-direction:row;}
+      .id-card{flex:1;}
+      .steps-grid{max-width:680px;margin-left:auto;margin-right:auto;}
+      .vsl-grid{grid-template-columns:repeat(4,1fr);}
+      .mosaic-grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:240px;gap:12px;}
+      .mosaic-card{aspect-ratio:unset;}
+      .mosaic-card:nth-child(1){grid-column:1/3;}
+      .mosaic-card:nth-child(2){grid-column:3;grid-row:1/3;}
+      .mosaic-card:nth-child(3){grid-column:4;grid-row:1/3;}
+      .mosaic-card:nth-child(4){grid-column:1;}
+      .mosaic-card:nth-child(5){grid-column:2;}
+      .mosaic-card:nth-child(6){grid-column:1/3;}
+      .mosaic-card:nth-child(7){grid-column:3/5;}
+      .mosaic-card-h1{font-size:1.45rem;}
+      .tratamos-stat-num{font-size:2.8rem;}
+      .unidades-grid{grid-template-columns:repeat(4,1fr);}
+      .beneficios-grid{grid-template-columns:repeat(3,1fr);}
+      .chat-widget{bottom:28px;right:28px;}
+      .footer-grid{grid-template-columns:2fr 1fr 1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- CHAT WIDGET -->
+<div class="chat-widget" id="chatWidget">
+  <div class="chat-box" id="chatBox">
+    <div class="chat-header">
+      <div class="chat-header-av">
+        <img src="Assets/Fotos/Chat.webp" alt="Aline">
+        <span class="chat-dot"></span>
+      </div>
+      <div class="chat-header-info">
+        <span class="chat-header-name">Aline Gonçalves</span>
+        <span class="chat-header-status">Online agora</span>
+      </div>
+      <button class="chat-close-btn" onclick="closeChat()" aria-label="Fechar">✕</button>
+    </div>
+    <div class="chat-messages" id="chatMessages"></div>
+    <div class="chat-cta" id="chatCta" style="display:none;">
+      <a href="https://api.whatsapp.com/send/?phone=554384137634&text=Oi+Aline%2C+tudo+bem%3F+Gostaria+de+agendar+minha+avalia%C3%A7%C3%A3o+gratuita+na+Vibe+Terapias!" class="btn-chat-cta" target="_blank" rel="noopener">Sim, quero conversar →</a>
+    </div>
+  </div>
+  <div class="chat-bottom">
+    <div class="chat-preview" id="chatPreview">
+      <button class="chat-preview-close" onclick="closePreview(event)" aria-label="Fechar">✕</button>
+      <p class="chat-preview-msg" id="chatPreviewMsg">Posso te ajudar a agendar sua <strong>avaliação gratuita!</strong></p>
+    </div>
+    <button class="chat-avatar-btn" onclick="openChat()" aria-label="Falar com Aline">
+      <img src="Assets/Fotos/Chat.webp" alt="Aline">
+      <span class="chat-avatar-dot"></span>
+    </button>
+  </div>
+</div>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  <span class="pulse"></span>
+  <span><span class="urgency-bar-text">Vagas limitadas esta semana — </span>Avaliação gratuita com Câmera Termal</span>
+  <a href="https://api.whatsapp.com/send/?phone=554384137634&text=Ol%C3%A1%2C+quero+agendar+minha+avalia%C3%A7%C3%A3o+gratuita+com+C%C3%A2mera+Termal" target="_blank" rel="noopener">Agendar agora →</a>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="#hero" class="logo" aria-label="Vibe Terapias">
+        <img src="Assets/Logos/Logo Marrom.webp" alt="Vibe Terapias" width="140" height="40">
+      </a>
+      <nav class="header-nav" aria-label="Menu principal">
+        <a href="#identifica">Suas Dores</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#faq">Dúvidas</a>
+        <a href="#como-funciona">Como Funciona</a>
+      </nav>
+      <a href="https://api.whatsapp.com/send/?phone=554384137634&text=Ol%C3%A1%2C+tudo+bem%3F+Gostaria+de+agendar+uma+avalia%C3%A7%C3%A3o+na+Vibe+Terapias" class="btn btn-primary" target="_blank" rel="noopener">
+        <svg class="icon-wpp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Agendar avaliação
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- 1. HERO -->
+<section class="hero" id="hero">
+  <div class="hero-slideshow">
+    <div class="hero-slide active" style="background-image:url('Assets/Fotos/Hero.webp')"></div>
+  </div>
+  <div class="hero-bg-color"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">Câmera Termal · Diagnóstico Exclusivo</div>
+      <h1 class="hero-title">
+        Você não precisa mais<br>
+        <span class="highlight">viver com essa dor.</span>
+      </h1>
+      <p class="hero-tagline">Nossa Câmera Termal identifica a raiz exata da sua dor — e nosso protocolo exclusivo de liberação miofascial elimina de vez o problema, não só o sintoma.</p>
+      <div class="hero-bullets">
+        <div class="hero-bullet">Diagnóstico termal preciso já na primeira sessão</div>
+        <div class="hero-bullet">Protocolo personalizado para a sua dor específica</div>
+        <div class="hero-bullet">Alívio desde a primeira sessão, resultado duradouro</div>
+      </div>
+      <div class="hero-ctas">
+        <a href="https://api.whatsapp.com/send/?phone=554384137634&text=Ol%C3%A1%2C+quero+agendar+minha+avalia%C3%A7%C3%A3o+com+C%C3%A2mera+Termal+na+Vibe+Terapias" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg class="icon-wpp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Quero minha avaliação com Câmera Termal
+        </a>
+        <a href="#como-funciona" class="btn btn-outline-white">Ver como funciona</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">+45 mil</div>
+          <div class="hero-stat-label">Pessoas impactadas</div>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">98%</div>
+          <div class="hero-stat-label">de Satisfação</div>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">8</div>
+          <div class="hero-stat-label">Unidades SP·PR·SC</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. PROVA SOCIAL -->
+<div class="proof-strip" id="proof-strip">
+  <div class="container">
+    <div class="proof-inner">
+      <div class="proof-item">
+        <span class="proof-num" data-count="45" data-prefix="+" data-suffix=" mil">+45 mil</span>
+        <span class="proof-label">Pessoas Impactadas</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <span class="proof-num" data-count="98" data-suffix="%">98%</span>
+        <span class="proof-label">de Satisfação</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <span class="proof-num" data-count="15" data-suffix=" mil">15 mil</span>
+        <span class="proof-label">Profissionais Formados</span>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <span class="proof-num" data-count="8" data-suffix=" Unidades">8 Unidades</span>
+        <span class="proof-label">SP | PR | SC</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. IDENTIFICA -->
+<section class="identifica section" id="identifica">
+  <div class="identifica-bg-img" aria-hidden="true"></div>
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Você se identifica?</span>
+      <h2 class="section-title">Entendemos o que você está vivendo</h2>
+      <p class="identifica-intro">Se você se vê em algum desses cenários,<br>você precisa da Vibe Terapias!</p>
+    </div>
+    <div class="identifica-grid">
+      <div class="id-card pain">
+        <div class="id-card-header">
+          <div class="id-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+          <span class="id-card-title">O que você pode estar vivendo</span>
+        </div>
+        <div class="id-item"><span class="id-dot"></span>Dor lombar, cervical ou no pescoço que simplesmente não passa</div>
+        <div class="id-item"><span class="id-dot"></span>Já tomou remédio, fez fisioterapia e a dor voltou em semanas</div>
+        <div class="id-item"><span class="id-dot"></span>Acorda com dor, dorme mal e perdeu mobilidade no dia a dia</div>
+        <div class="id-item"><span class="id-dot"></span>Cansado(a) de soluções que tratam o sintoma e não a causa</div>
+        <div class="id-item"><span class="id-dot"></span>"Os exames dizem que está tudo normal" — mas você sente que não está</div>
+      </div>
+      <div class="id-card desire">
+        <div class="id-card-header">
+          <div class="id-card-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span class="id-card-title">O que você merece ter</span>
+        </div>
+        <div class="id-item"><span class="id-dot"></span>Voltar a trabalhar, dormir e se mover sem dor</div>
+        <div class="id-item"><span class="id-dot"></span>Um diagnóstico que encontra a raiz real do problema</div>
+        <div class="id-item"><span class="id-dot"></span>Cuidado individualizado e acompanhamento de verdade</div>
+        <div class="id-item"><span class="id-dot"></span>Recuperar sua qualidade de vida e independência física</div>
+        <div class="id-item"><span class="id-dot"></span>Resultado que dura — não apenas alívio temporário</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;">
+      <a href="https://api.whatsapp.com/send/?phone=554384137634&text=Ol%C3%A1%2C+tudo+bem%3F+Gostaria+de+agendar+uma+avalia%C3%A7%C3%A3o+na+Vibe+Terapias" class="btn btn-primary" target="_blank" rel="noopener">
+        <svg class="icon-wpp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Quero minha avaliação gratuita
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 4. REPOSICIONA -->
+<section class="reposiciona section">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label" style="color:#974a00;">Nossa diferença</span>
+      <h2 class="section-title">Não somos um SPA.<br>Somos a solução para suas dores.</h2>
+      <p class="reposiciona-tagline">"Mas você relaxa como em um SPA."</p>
+    </div>
+    <div class="reposiciona-grid">
+      <div class="reposiciona-col">
+        <div class="reposiciona-col-title">Tratamento convencional</div>
+        <div class="reposiciona-item"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Trata o sintoma, não a causa</div>
+        <div class="reposiciona-item"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Diagnóstico genérico</div>
+        <div class="reposiciona-item"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Alívio temporário</div>
+        <div class="reposiciona-item"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Protocolo igual para todos</div>
+      </div>
+      <div class="reposiciona-col vibe">
+        <div class="reposiciona-col-title">Vibe Terapias</div>
+        <div class="reposiciona-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Câmera Termal identifica a raiz</div>
+        <div class="reposiciona-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Diagnóstico preciso e visual</div>
+        <div class="reposiciona-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Resultado duradouro</div>
+        <div class="reposiciona-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Protocolo 100% personalizado</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. COMO FUNCIONA -->
+<section class="como-funciona section" id="como-funciona">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label" style="color:#974a00;">Como Funciona</span>
+      <h2 class="section-title">Do diagnóstico ao resultado em 4 passos</h2>
+    </div>
+    <div class="steps-grid" id="stepsGrid">
+      <div class="step">
+        <div class="step-left"><div class="step-num">01</div><div class="step-line"></div></div>
+        <div class="step-content">
+          <span class="step-tag">Primeiro passo</span>
+          <div class="step-title">Agende pelo WhatsApp</div>
+          <p class="step-text">Em poucos minutos você escolhe o horário e garante sua vaga. Sem burocracia.</p>
+          <span class="step-highlight"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Simples e rápido</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-left"><div class="step-num">02</div><div class="step-line"></div></div>
+        <div class="step-content">
+          <span class="step-tag">Diagnóstico exclusivo</span>
+          <div class="step-title">Avaliação com Câmera Termal</div>
+          <p class="step-text">Nossa tecnologia de termografia identifica visualmente a raiz exata da sua dor — algo que exames convencionais não conseguem mostrar. Com esse mapa térmico, montamos seu protocolo personalizado.</p>
+          <span class="step-highlight"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Tecnologia exclusiva</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-left"><div class="step-num">03</div><div class="step-line"></div></div>
+        <div class="step-content">
+          <span class="step-tag">Resultado imediato</span>
+          <div class="step-title">Você inicia o tratamento</div>
+          <p class="step-text">Com protocolo individualizado de liberação miofascial, você sente o alívio das dores já na primeira sessão — com acompanhamento contínuo.</p>
+          <span class="step-highlight"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Protocolo exclusivo</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-left"><div class="step-num">04</div><div class="step-line"></div></div>
+        <div class="step-content">
+          <span class="step-tag">Transformação definitiva</span>
+          <div class="step-title">Recuperação e bem-estar</div>
+          <p class="step-text">Evolução monitorada sessão a sessão. Você recupera mobilidade, qualidade de vida e conquista o fim definitivo das suas dores.</p>
+          <span class="step-highlight"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Resultado duradouro</span>
+        </div>
+      </div>
+    </div>
+    <div class="section-cta-center">
+      <a href="https://api.whatsapp.com/send/?phone=554384137634&text=Ol%C3%A1%2C+tudo+bem%3F+Gostaria+de+agendar+uma+avalia%C3%A7%C3%A3o+na+Vibe+Terapias" class="btn btn-primary" target="_blank" rel="noopener">
+        <svg class="icon-wpp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Quero minha avaliação
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BARRA DIVISÓRIA -->
+<div class="barra-wrap"><img src="Assets/Barra.svg" class="barra-divider" alt="" aria-hidden="true"></div>
+
+<!-- 6. TRATAMOS MOSAICO -->
+<section class="tratamos section" id="sobre">
+  <div class="container">
+    <div class="tratamos-header">
+      <span class="section-label" style="color:#974a00;">Por que escolher a Vibe?</span>
+      <h2 class="section-title">Quando o assunto é dor, a gente entende!</h2>
+      <p class="section-sub" style="max-width:540px;margin:0 auto;">Não somos um SPA. Somos a solução para as suas dores.<br>Mas você relaxa como em um SPA.</p>
+    </div>
+    <div class="mosaic-grid">
+      <div class="mosaic-card">
+        <div class="mosaic-card-img" style="background-image:url('Assets/Fotos/Dores/Coluna.webp')"></div>
+        <div class="mosaic-card-content">
+          <div class="mosaic-card-text">
+            <div class="mosaic-card-h1">Dor na Coluna</div>
+            <div class="mosaic-card-h2">Aquela pontada que aparece do nada e faz você segurar a respiração!</div>
+          </div>
+          <a href="https://api.whatsapp.com/send/?phone=554384137634&text=Quero+saber+sobre+Dor+na+Coluna" class="mosaic-card-btn" target="_blank" rel="noopener" aria-label="Agendar">
+            <svg viewBox="0 0 24 24"><polyline points="7 17 17 7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="mosaic-card">
+        <div class="mosaic-card-img" style="background-image:url('Assets/Fotos/Dores/Hérnia.webp')"></div>
+        <div class="mosaic-card-content">
+          <div class="mosaic-card-text">
+            <div class="mosaic-card-h1">Hérnia de Disco</div>
+            <div class="mosaic-card-h2">Viver com medo de "travar" a cada movimento é exaustivo!</div>
+          </div>
+          <a href="https://api.whatsapp.com/send/?phone=554384137634&text=Quero+saber+sobre+Hernia+de+Disco" class="mosaic-card-btn" target="_blank" rel="noopener" aria-label="Agendar">
+            <svg viewBox="0 0 24 24"><polyline points="7 17 17 7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="mosaic-card">
+        <div class="mosaic-card-img" style="background-image:url('Assets/Fotos/Dores/Pescoço.webp')"></div>
+        <div class="mosaic-card-content">
+          <div class="mosaic-card-text">
+            <div class="mosaic-card-h1">Tensão no Pescoço</div>
+            <div class="mosaic-card-h2">Sabemos como é quando o pescoço queima e os ombros travam!</div>
+          </div>
+          <a href="https://api.whatsapp.com/send/?phone=554384137634&text=Quero+saber+sobre+Tensao+no+Pescoco" class="mosaic-card-btn" target="_blank" rel="noopener" aria-label="Agendar">
+            <svg viewBox="0 0 24 24"><polyline points="7 17 17 7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="mosaic-card">
+        <div class="mosaic-card-img" style="background-image:url('Assets/Fotos/Dores/Enxaqueca.webp')"></div>
+        <div class="mosaic-card-content">
+          <div class="mosaic-card-text">
+            <div class="mosaic-card-h1">Enxaqueca</div>
+            <div class="mosaic-card-h2">Quando seu dia para no meio e a luz vira sua inimiga!</div>
+          </div>
+          <a href="https://api.whatsapp.com/send/?phone=554384137634&text=Quero+saber+sobre+Enxaqueca" class="mosaic-card-btn" target="_blank" rel="noopener" aria-label="Agendar">
+            <svg viewBox="0 0 24 24"><polyline points="7 17 17 7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="mosaic-card">
+        <div class="mosaic-card-img" style="background-image:url('Assets/Fotos/Dores/Fibromialgia.webp')"></div>
+        <div class="mosaic-card-content">
+          <div class="mosaic-card-text">
+            <div class="mosaic-card-h1">Fibromialgia</div>
+            <div class="mosaic-card-h2">A gente sabe que dói no corpo todo e o cansaço não tem fim!</div>
+          </div>
+          <a href="https://api.whatsapp.com/send/?phone=554384137634&text=Quero+saber+sobre+Fibromialgia" class="mosaic-card-btn" target="_blank" rel="noopener" aria-label="Agendar">
+            <svg viewBox="0 0 24 24"><polyline points="7 17 17 7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="mosaic-card">
+        <div class="mosaic-card-img" style="background-image:url('Assets/Fotos/Dores/Bruxismo.webp')"></div>
+        <div class="mosaic-card-content">
+          <div class="mosaic-card-text">
+            <div class="mosaic-card-h1">Bruxismo</div>
+            <div class="mosaic-card-h2">Acordar com rosto travado e mandíbula cansada estraga seu dia!</div>
+          </div>
+          <a href="https://api.whatsapp.com/send/?phone=554384137634&text=Quero+saber+sobre+Bruxismo" class="mosaic-card-btn" target="_blank" rel="noopener" aria-label="Agendar">
+            <svg viewBox="0 0 24 24"><polyline points="7 17 17 7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="mosaic-card">
+        <div class="mosaic-card-img" style="background-image:url('Assets/Fotos/Dores/Pernas.webp')"></div>
+        <div class="mosaic-card-content">
+          <div class="mosaic-card-text">
+            <div class="mosaic-card-h1">Dores nas Pernas</div>
+            <div class="mosaic-card-h2">Aquela fisgada que desce pela perna e aumenta a cada passo!</div>
+          </div>
+          <a href="https://api.whatsapp.com/send/?phone=554384137634&text=Quero+saber+sobre+Dores+nas+Pernas" class="mosaic-card-btn" target="_blank" rel="noopener" aria-label="Agendar">
+            <svg viewBox="0 0 24 24"><polyline points="7 17 17 7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="tratamos-stats">
+      <div class="tratamos-stat"><div class="tratamos-stat-num">+7</div><div class="tratamos-stat-label">Tipos de Tratamento</div></div>
+      <div class="tratamos-stat"><div class="tratamos-stat-num">3</div><div class="tratamos-stat-label">Estados — SP, PR e SC</div></div>
+    </div>
+    <div style="text-align:center;margin-top:36px;">
+      <a href="https://api.whatsapp.com/send/?phone=554384137634&text=Ol%C3%A1%2C+tudo+bem%3F+Gostaria+de+agendar+uma+avalia%C3%A7%C3%A3o+na+Vibe+Terapias" class="btn btn-primary" target="_blank" rel="noopener">
+        <svg class="icon-wpp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Agendar avaliação gratuita
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 7. DEPOIMENTOS -->
+<section class="depoimentos section" id="depoimentos">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Quem já passou por aqui</span>
+      <h2 class="section-title">Veja quem a Vibe já transformou</h2>
+    </div>
+    <div class="vsl-grid">
+      <div class="vsl-card"><div class="vsl-video-wrap"><iframe src="https://www.youtube.com/embed/GSZxebmYXu4" title="Depoimento Valéria" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div><div class="vsl-info"><div class="vsl-tratamento">Dores no Pescoço</div><div class="vsl-nome">Valéria</div></div></div>
+      <div class="vsl-card"><div class="vsl-video-wrap"><iframe src="https://www.youtube.com/embed/tcF7kNBwPbA" title="Depoimento Patrícia" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div><div class="vsl-info"><div class="vsl-tratamento">Dores na Coluna</div><div class="vsl-nome">Patrícia</div></div></div>
+      <div class="vsl-card"><div class="vsl-video-wrap"><iframe src="https://youtube.com/embed/E_Dyds8N288" title="Depoimento Gerlane" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div><div class="vsl-info"><div class="vsl-tratamento">Dores na Lombar</div><div class="vsl-nome">Gerlane</div></div></div>
+      <div class="vsl-card"><div class="vsl-video-wrap"><iframe src="https://www.youtube.com/embed/Lj_kQVTt-5w" title="Depoimento Aline" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div><div class="vsl-info"><div class="vsl-tratamento">Dores de Cabeça</div><div class="vsl-nome">Aline</div></div></div>
+    </div>
+    <div style="text-align:center;margin-top:36px;">
+      <a href="https://api.whatsapp.com/send/?phone=554384137634&text=Ol%C3%A1%2C+tudo+bem%3F+Gostaria+de+agendar+uma+avalia%C3%A7%C3%A3o+na+Vibe+Terapias" class="btn btn-primary" target="_blank" rel="noopener">
+        <svg class="icon-wpp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Agendar avaliação gratuita
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 8. BENEFÍCIOS -->
+<section class="beneficios section">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label" style="color:#974a00;">O que muda na sua vida</span>
+      <h2 class="section-title">Liberdade que você vai sentir</h2>
+      <p class="section-sub" style="max-width:500px;margin:0 auto 8px;">Não vendemos tratamento. Vendemos a sua vida de volta.</p>
+    </div>
+    <div class="beneficios-grid">
+      <div class="beneficio-item">
+        <div class="beneficio-icon"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+        <div class="beneficio-text"><div class="beneficio-title">Dormir a noite toda sem dor</div><div class="beneficio-desc">Acorde descansado e pronto para o dia — sem travamentos ou desconforto matinal.</div></div>
+      </div>
+      <div class="beneficio-item">
+        <div class="beneficio-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="beneficio-text"><div class="beneficio-title">Trabalhar com foco e energia</div><div class="beneficio-desc">Sem pausas forçadas, sem dependência de analgésicos para terminar o dia.</div></div>
+      </div>
+      <div class="beneficio-item">
+        <div class="beneficio-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="beneficio-text"><div class="beneficio-title">Brincar com filhos e netos</div><div class="beneficio-desc">Volte a estar presente nos momentos que importam — sem limites físicos.</div></div>
+      </div>
+      <div class="beneficio-item">
+        <div class="beneficio-icon"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+        <div class="beneficio-text"><div class="beneficio-title">Retomar exercícios e esportes</div><div class="beneficio-desc">Caminhe, corra, dance ou malhe — recupere a mobilidade que a dor tomou de você.</div></div>
+      </div>
+      <div class="beneficio-item">
+        <div class="beneficio-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="beneficio-text"><div class="beneficio-title">Viver em casa sem limitações</div><div class="beneficio-desc">Faça suas atividades diárias sem medo de "travar" ou piorar a dor.</div></div>
+      </div>
+      <div class="beneficio-item">
+        <div class="beneficio-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+        <div class="beneficio-text"><div class="beneficio-title">Qualidade de vida real</div><div class="beneficio-desc">Menos medicamentos, mais disposição, mais presença — de verdade, no dia a dia.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. OFERTA -->
+<section class="oferta section">
+  <div class="container">
+    <div class="oferta-card">
+      <span class="section-label" style="color:#974a00;">Próximo passo</span>
+      <h2 class="section-title">Agende sua avaliação gratuita</h2>
+      <p class="section-sub">Se você convive com dor e quer uma solução que trata a causa — não apenas o sintoma — este é o momento.</p>
+      <div class="oferta-badges">
+        <div class="oferta-badge-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Avaliação com Câmera Termal inclusa</div>
+        <div class="oferta-badge-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Vagas limitadas por agenda semanal</div>
+        <div class="oferta-badge-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Processo simples — em minutos você agenda pelo WhatsApp</div>
+        <div class="oferta-badge-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Protocolo 100% personalizado para a sua dor</div>
+      </div>
+      <a href="https://api.whatsapp.com/send/?phone=554384137634&text=Ol%C3%A1%2C+tudo+bem%3F+Gostaria+de+agendar+uma+avalia%C3%A7%C3%A3o+na+Vibe+Terapias" class="btn btn-primary" target="_blank" rel="noopener">
+        <svg class="icon-wpp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Quero agendar agora
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 10. FAQ -->
+<section class="faq section" id="faq">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label" style="color:#974a00;">Dúvidas frequentes</span>
+      <h2 class="section-title">Tire suas dúvidas,<br>depois agendamos!</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-trigger"><span class="faq-q">O que é a avaliação com Câmera Termal?</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-body"><div class="faq-body-inner">A termografia é uma tecnologia que identifica diferenças de temperatura no corpo, revelando visualmente onde está a inflamação e a raiz real da sua dor — algo que exames convencionais muitas vezes não conseguem mostrar. Com esse mapa, montamos um protocolo 100% personalizado para você.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-trigger"><span class="faq-q">O tratamento é para qualquer tipo de dor?</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-body"><div class="faq-body-inner">Atendemos principalmente dores profundas: lombar, cervical, joelho, ciático, fibromialgia, bruxismo, enxaqueca de tensão e tensão muscular crônica.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-trigger"><span class="faq-q">Preciso ter feito outros tratamentos antes?</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-body"><div class="faq-body-inner">Não. Mas muitos dos nossos pacientes chegam após tentativas de fisioterapia convencional ou remédios sem resultado duradouro — e finalmente encontram alívio real aqui.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-trigger"><span class="faq-q">Quantas sessões são necessárias?</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-body"><div class="faq-body-inner">Varia conforme a causa e a intensidade da dor. Nossa equipe define o protocolo completo na avaliação inicial, sem estimativas genéricas.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-trigger"><span class="faq-q">O tratamento é doloroso?</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-body"><div class="faq-body-inner">A liberação miofascial pode gerar leve desconforto pontual, mas é tolerável. O objetivo é aliviar, não causar dor. A maioria dos pacientes sente alívio já durante a sessão.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-trigger"><span class="faq-q">A Vibe é uma clínica ou um SPA?</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-body"><div class="faq-body-inner">Somos uma clínica especializada em tratamento de dores profundas. Mas nosso ambiente e atendimento oferecem uma experiência premium: você trata a causa da sua dor e ainda relaxa como em um SPA.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-trigger"><span class="faq-q">Posso falar com alguém antes de agendar?</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-body"><div class="faq-body-inner">Sim. Chame no WhatsApp e nossa equipe responde todas as suas dúvidas antes de marcar qualquer horário. Sem pressão.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. CTA FINAL -->
+<section class="cta-final bg-marrom">
+  <div class="container">
+    <div class="cta-final-content">
+      <span class="section-label">Dê o primeiro passo</span>
+      <h2 class="section-title">Pronto(a) para viver sem dor?</h2>
+      <p class="section-sub" style="max-width:480px;">Agende sua avaliação com Câmera Termal. Protocolo exclusivo, atendimento premium e foco no resultado definitivo.</p>
+      <div class="cta-urgency">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Vagas limitadas nesta semana
+      </div>
+      <div class="cta-btns">
+        <a href="https://api.whatsapp.com/send/?phone=554384137634&text=Ol%C3%A1%2C+tudo+bem%3F+Gostaria+de+agendar+uma+avalia%C3%A7%C3%A3o+na+Vibe+Terapias" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg class="icon-wpp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Quero minha avaliação agora
+        </a>
+        <a href="#faq" class="btn btn-outline-white">Ver perguntas frequentes</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="contato">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="footer-logo" aria-label="Vibe Terapias"><img src="Assets/Logos/Logo Branco.webp" alt="Vibe Terapias" width="140" height="40"></a>
+        <p style="font-size:.82rem;line-height:1.65;max-width:260px;margin-top:4px;">Clínica especializada em tratamento de dores profundas. Não somos um SPA, somos a solução para suas dores.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/vibeterapias/" target="_blank" rel="noopener" aria-label="Instagram"><img src="Assets/Icons/instagram.svg" alt="Instagram"></a>
+          <a href="https://www.youtube.com/@VibeTerapias" target="_blank" rel="noopener" aria-label="YouTube"><img src="Assets/Icons/youtube.svg" alt="YouTube"></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Sobre Nós</div>
+        <nav class="footer-nav">
+          <a href="#identifica">Suas Dores</a>
+          <a href="#como-funciona">Como Funciona</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a href="#faq">Dúvidas</a>
+        </nav>
+      </div>
+      <div>
+        <a href="#depoimentos" class="footer-col-title" style="display:block;text-decoration:none;margin-bottom:14px;">Depoimentos</a>
+        <a href="https://api.whatsapp.com/send/?phone=554384137634&text=Ol%C3%A1%2C+tudo+bem%3F+Gostaria+de+agendar+uma+avalia%C3%A7%C3%A3o+na+Vibe+Terapias" target="_blank" rel="noopener" class="footer-col-title" style="display:block;text-decoration:none;">Contato</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Vibe Terapias. Todos os direitos reservados. CNPJ: 53.190.835/0001-18</p></div>
+  </div>
+</footer>
+
+<script>
+  // Header adaptativo
+  const header = document.getElementById('header');
+  const darkSections = ['hero','identifica','depoimentos','cta-final','unidades'];
+  function updateHeader() {
+    const barH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--bar-h')) || 44;
+    const mid = barH + header.offsetHeight / 2;
+    const el = document.elementFromPoint(window.innerWidth / 2, mid + 2);
+    if (!el) return;
+    let node = el, onDark = false;
+    while (node && node !== document.body) {
+      if (darkSections.some(c => node.classList && node.classList.contains(c))) { onDark = true; break; }
+      node = node.parentElement;
+    }
+    header.classList.toggle('on-dark', onDark);
+    header.classList.toggle('on-light', !onDark);
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-trigger').addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Steps animação
+  (function() {
+    const steps = document.querySelectorAll('.step');
+    if (!steps.length) return;
+    let triggered = false;
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting && !triggered) {
+          triggered = true;
+          steps.forEach((s, i) => setTimeout(() => s.classList.add('visible'), i * 280));
+          obs.disconnect();
+        }
+      });
+    }, { threshold: 0.15 });
+    obs.observe(document.querySelector('.como-funciona'));
+  })();
+
+  // Contador animado
+  (function() {
+    const nums = document.querySelectorAll('.proof-num[data-count]');
+    if (!nums.length) return;
+    let done = false;
+    const strip = document.getElementById('proof-strip');
+    function animateCount(el) {
+      const target = parseInt(el.dataset.count, 10);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const duration = 1400;
+      const start = performance.now();
+      function step(now) {
+        const elapsed = Math.min(now - start, duration);
+        const ease = 1 - Math.pow(1 - elapsed / duration, 3);
+        el.textContent = prefix + Math.round(ease * target) + suffix;
+        if (elapsed < duration) requestAnimationFrame(step);
+        else el.textContent = prefix + target + suffix;
+      }
+      requestAnimationFrame(step);
+    }
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting && !done) { done = true; nums.forEach(animateCount); obs.disconnect(); } });
+    }, { threshold: 0.5 });
+    if (strip) obs.observe(strip);
+  })();
+
+  // Fade in on scroll
+  const fadeEls = document.querySelectorAll('.mosaic-card,.vsl-card,.unidade-card,.id-card,.faq-item,.oferta-card,.beneficio-item,.reposiciona-col');
+  const fadeObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; fadeObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  fadeEls.forEach(el => { el.style.opacity='0'; el.style.transform='translateY(16px)'; el.style.transition='opacity .45s ease,transform .45s ease'; fadeObs.observe(el); });
+
+  // Chat Widget
+  (function() {
+    const chatBox = document.getElementById('chatBox');
+    const chatMessages = document.getElementById('chatMessages');
+    const chatCta = document.getElementById('chatCta');
+    let opened = false;
+    const MSGS = [
+      'Oi! Tudo bem? Sou a <strong>Aline</strong>, da Vibe Terapias.',
+      'Ajudamos pessoas a conquistar uma vida <strong>sem dores</strong> com nossa Câmera Termal e protocolo exclusivo de liberação miofascial.',
+      'Posso te ajudar a agendar sua <strong>avaliação gratuita</strong> agora mesmo!'
+    ];
+    function typing() {
+      const el = document.createElement('div');
+      el.className = 'chat-typing';
+      el.innerHTML = '<img src="Assets/Fotos/Chat.webp" class="chat-msg-av" alt=""><div class="chat-typing-bubble"><span></span><span></span><span></span></div>';
+      chatMessages.appendChild(el);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+      return el;
+    }
+    function addMsg(text, delay) {
+      return new Promise(resolve => {
+        const t = typing();
+        setTimeout(() => {
+          t.remove();
+          const m = document.createElement('div');
+          m.className = 'chat-msg';
+          m.innerHTML = '<img src="Assets/Fotos/Chat.webp" class="chat-msg-av" alt="Aline"><div class="chat-msg-bubble">' + text + '</div>';
+          chatMessages.appendChild(m);
+          requestAnimationFrame(() => requestAnimationFrame(() => m.classList.add('visible')));
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+          resolve();
+        }, delay);
+      });
+    }
+    async function playMsgs() {
+      await addMsg(MSGS[0], 900);
+      await addMsg(MSGS[1], 1400);
+      await addMsg(MSGS[2], 1400);
+      setTimeout(() => { chatCta.style.display = 'block'; }, 300);
+    }
+    const preview = document.getElementById('chatPreview');
+    const previewMsg = document.getElementById('chatPreviewMsg');
+    const PREVIEW_MSGS = [
+      'Posso te ajudar a agendar sua <strong>avaliação gratuita!</strong>',
+      'Câmera Termal encontra a raiz da sua dor — <strong>agende agora!</strong>',
+      '<strong>+45 mil</strong> atendimentos realizados. Agende agora!'
+    ];
+    let previewIdx = 0, previewTimer;
+    setTimeout(() => {
+      if (!opened) {
+        preview.style.display = 'block';
+        previewTimer = setInterval(() => {
+          previewMsg.style.opacity = '0';
+          setTimeout(() => { previewIdx = (previewIdx + 1) % PREVIEW_MSGS.length; previewMsg.innerHTML = PREVIEW_MSGS[previewIdx]; previewMsg.style.opacity = '1'; }, 300);
+        }, 4000);
+      }
+    }, 3000);
+    window.closePreview = e => { e.stopPropagation(); preview.style.display = 'none'; clearInterval(previewTimer); };
+    window.openChat = () => { preview.style.display = 'none'; clearInterval(previewTimer); chatBox.classList.add('open'); if (!opened) { opened = true; playMsgs(); } };
+    window.closeChat = () => { chatBox.classList.remove('open'); };
+  })();
+</script>
+</body>
+</html>
