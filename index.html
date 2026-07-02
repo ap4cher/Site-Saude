@@ -150,13 +150,6 @@
       .hero-cards{max-width:1000px;}
     }
 
-    /* PROOF STRIP */
-    .proof-strip{background:var(--primary-light);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:34px 0;}
-    .proof-inner{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 0;}
-    .proof-item{display:flex;flex-direction:column;align-items:stretch;flex:1;min-width:140px;padding:0 28px;}
-    .proof-num{font-family:var(--font-display);font-size:2.7rem;color:var(--primary-dark);line-height:1;text-align:center;display:block;}
-    .proof-label{font-size:.80rem;color:var(--text-medium);font-weight:500;letter-spacing:.04em;text-align:center;margin-top:5px;}
-    .proof-divider{width:1px;height:52px;background:rgba(125,69,53,.18);align-self:center;flex:none;}
 
     /* BG MARROM */
     .bg-marrom{background:linear-gradient(160deg,#5C2C14 0%,#3B1608 45%,#7D4535 100%);color:white;}
@@ -189,20 +182,35 @@
     }
 
     /* REPOSICIONA */
-    .reposiciona{background:white;}
-    .reposiciona .section-title{color:var(--text-dark);}
-    .reposiciona-tagline{font-size:1.05rem;font-style:italic;color:var(--primary);font-weight:600;margin-bottom:32px;text-align:center;}
-    .reposiciona-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:600px;margin:0 auto;}
-    .reposiciona-col{background:var(--bg);border-radius:var(--radius);padding:22px 18px;}
-    .reposiciona-col.vibe{background:var(--primary-light);border:2px solid var(--primary);}
-    .reposiciona-col-title{font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:14px;}
-    .reposiciona-col.vibe .reposiciona-col-title{color:var(--primary);}
-    .reposiciona-item{display:flex;align-items:flex-start;gap:8px;font-size:.84rem;color:var(--text-medium);line-height:1.5;margin-bottom:10px;}
-    .reposiciona-item:last-child{margin-bottom:0;}
-    .reposiciona-item svg{width:14px;height:14px;flex-shrink:0;margin-top:3px;}
-    .reposiciona-col .reposiciona-item svg{stroke:#bbb;fill:none;stroke-width:2;}
-    .reposiciona-col.vibe .reposiciona-item{color:var(--primary-dark);}
-    .reposiciona-col.vibe .reposiciona-item svg{stroke:var(--primary);fill:none;stroke-width:2.5;}
+    .reposiciona{background:var(--bg);}
+    .reposiciona-header{text-align:center;margin-bottom:40px;}
+    .reposiciona-header .section-label{color:#974a00;}
+    .reposiciona-header .section-title{color:var(--text-dark);}
+    .reposiciona-header .section-sub{max-width:500px;margin:0 auto;}
+    .repo-layout{display:grid;grid-template-columns:1fr;gap:14px;}
+    .repo-photo{border-radius:22px;overflow:hidden;background:linear-gradient(145deg,var(--primary-light),var(--border));min-height:320px;position:relative;display:flex;align-items:flex-end;}
+    .repo-photo-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
+    .repo-photo-overlay{position:relative;z-index:2;width:100%;padding:20px;}
+    .repo-compare{background:rgba(250,247,244,.92);backdrop-filter:blur(10px);border-radius:14px;padding:16px 18px;display:grid;grid-template-columns:1fr 1fr;gap:0;}
+    .repo-compare-col{padding:0 14px;}
+    .repo-compare-col+.repo-compare-col{border-left:1px solid var(--border);}
+    .repo-compare-label{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:10px;}
+    .repo-compare-label.vibe{color:var(--primary);}
+    .repo-compare-item{display:flex;align-items:flex-start;gap:6px;font-size:.76rem;color:var(--text-medium);line-height:1.4;margin-bottom:7px;}
+    .repo-compare-item:last-child{margin-bottom:0;}
+    .repo-compare-item svg{width:12px;height:12px;flex-shrink:0;margin-top:2px;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+    .repo-compare-item.bad svg{stroke:#bbb;}
+    .repo-compare-item.good svg{stroke:var(--primary);}
+    .repo-compare-item.good{color:var(--primary-dark);}
+    .repo-stats{display:flex;flex-direction:column;gap:14px;}
+    .repo-stat{background:white;border:1.5px solid var(--border);border-radius:22px;padding:28px 24px;flex:1;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;}
+    .repo-stat::before{content:'';position:absolute;bottom:-30px;right:-30px;width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,rgba(125,69,53,.07) 0%,transparent 70%);}
+    .repo-stat-icon{width:36px;height:36px;border-radius:10px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+    .repo-stat-icon img{width:20px;height:20px;object-fit:contain;}
+    .repo-stat-num{font-family:var(--font-display);font-size:2.8rem;color:var(--text-dark);line-height:1;margin-bottom:6px;}
+    .repo-stat-desc{font-size:.82rem;color:var(--text-medium);line-height:1.5;}
+    @media(min-width:640px){.repo-layout{grid-template-columns:1fr 1fr;}.repo-photo{min-height:420px;}.repo-stats{flex-direction:column;}}
+    @media(min-width:900px){.repo-layout{grid-template-columns:55% 1fr;gap:16px;}}
 
     /* COMO FUNCIONA */
     .como-funciona{background:linear-gradient(160deg,#3B1608 0%,#5C2C14 50%,#7D4535 100%);}
@@ -671,32 +679,6 @@
   </div>
 </section>
 
-<!-- 2. PROVA SOCIAL -->
-<div class="proof-strip" id="proof-strip">
-  <div class="container">
-    <div class="proof-inner">
-      <div class="proof-item">
-        <span class="proof-num" data-count="45" data-prefix="+" data-suffix=" mil">+45 mil</span>
-        <span class="proof-label">Pessoas Impactadas</span>
-      </div>
-      <div class="proof-divider"></div>
-      <div class="proof-item">
-        <span class="proof-num" data-count="98" data-suffix="%">98%</span>
-        <span class="proof-label">de Satisfação</span>
-      </div>
-      <div class="proof-divider"></div>
-      <div class="proof-item">
-        <span class="proof-num" data-count="15" data-suffix=" mil">15 mil</span>
-        <span class="proof-label">Profissionais Formados</span>
-      </div>
-      <div class="proof-divider"></div>
-      <div class="proof-item">
-        <span class="proof-num" data-count="8" data-suffix=" Unidades">8 Unidades</span>
-        <span class="proof-label">SP | PR | SC</span>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- 3. IDENTIFICA -->
 <section class="identifica" id="identifica">
@@ -743,26 +725,65 @@
 <!-- 4. REPOSICIONA -->
 <section class="reposiciona section">
   <div class="container">
-    <div class="text-center">
-      <span class="section-label" style="color:#974a00;">Nossa diferença</span>
+    <div class="reposiciona-header">
+      <span class="section-label">Nossa diferença</span>
       <h2 class="section-title">Não somos um SPA.<br>Somos a solução para suas dores.</h2>
-      <p class="reposiciona-tagline">"Mas você relaxa como em um SPA."</p>
+      <p class="section-sub">"Aqui você trata a causa da sua dor — e ainda relaxa como em um SPA."</p>
     </div>
-    <div class="reposiciona-grid">
-      <div class="reposiciona-col">
-        <div class="reposiciona-col-title">Tratamento convencional</div>
-        <div class="reposiciona-item"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Trata o sintoma, não a causa</div>
-        <div class="reposiciona-item"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Diagnóstico genérico</div>
-        <div class="reposiciona-item"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Alívio temporário</div>
-        <div class="reposiciona-item"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Protocolo igual para todos</div>
+
+    <div class="repo-layout">
+
+      <!-- Coluna esquerda: foto + card comparativo sobreposto -->
+      <div class="repo-photo">
+        <!-- placeholder até ter foto -->
+        <div style="position:absolute;inset:0;background:linear-gradient(145deg,var(--primary-light) 0%,var(--border) 100%);display:flex;align-items:center;justify-content:center;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(125,69,53,.25)" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <div class="repo-photo-overlay">
+          <div class="repo-compare">
+            <div class="repo-compare-col">
+              <div class="repo-compare-label">Tratamento convencional</div>
+              <div class="repo-compare-item bad"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Trata o sintoma</div>
+              <div class="repo-compare-item bad"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Diagnóstico genérico</div>
+              <div class="repo-compare-item bad"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Alívio temporário</div>
+              <div class="repo-compare-item bad"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Protocolo genérico</div>
+            </div>
+            <div class="repo-compare-col">
+              <div class="repo-compare-label vibe">Vibe Terapias</div>
+              <div class="repo-compare-item good"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Trata a raiz da dor</div>
+              <div class="repo-compare-item good"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Câmera Termal precisa</div>
+              <div class="repo-compare-item good"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Resultado duradouro</div>
+              <div class="repo-compare-item good"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>100% personalizado</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="reposiciona-col vibe">
-        <div class="reposiciona-col-title">Vibe Terapias</div>
-        <div class="reposiciona-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Câmera Termal identifica a raiz</div>
-        <div class="reposiciona-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Diagnóstico preciso e visual</div>
-        <div class="reposiciona-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Resultado duradouro</div>
-        <div class="reposiciona-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Protocolo 100% personalizado</div>
+
+      <!-- Coluna direita: 2 cards de stat -->
+      <div class="repo-stats">
+        <div class="repo-stat">
+          <div class="repo-stat-icon"><img src="Assets/Icons/Vibe.webp" alt=""></div>
+          <div>
+            <div class="repo-stat-num">+45 mil</div>
+            <div class="repo-stat-desc">Pessoas que já encontraram alívio real com a Vibe Terapias</div>
+          </div>
+        </div>
+        <div class="repo-stat">
+          <div class="repo-stat-icon"><img src="Assets/Icons/Vibe.webp" alt=""></div>
+          <div>
+            <div class="repo-stat-num">98%</div>
+            <div class="repo-stat-desc">de satisfação — pacientes que recomendam após o tratamento</div>
+          </div>
+        </div>
+        <div class="repo-stat">
+          <div class="repo-stat-icon"><img src="Assets/Icons/Vibe.webp" alt=""></div>
+          <div>
+            <div class="repo-stat-num">8 Unidades</div>
+            <div class="repo-stat-desc">presente em SP, PR e SC — perto de você</div>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -1271,32 +1292,6 @@
     obs.observe(document.querySelector('.como-funciona'));
   })();
 
-  // Contador animado
-  (function() {
-    const nums = document.querySelectorAll('.proof-num[data-count]');
-    if (!nums.length) return;
-    let done = false;
-    const strip = document.getElementById('proof-strip');
-    function animateCount(el) {
-      const target = parseInt(el.dataset.count, 10);
-      const prefix = el.dataset.prefix || '';
-      const suffix = el.dataset.suffix || '';
-      const duration = 1400;
-      const start = performance.now();
-      function step(now) {
-        const elapsed = Math.min(now - start, duration);
-        const ease = 1 - Math.pow(1 - elapsed / duration, 3);
-        el.textContent = prefix + Math.round(ease * target) + suffix;
-        if (elapsed < duration) requestAnimationFrame(step);
-        else el.textContent = prefix + target + suffix;
-      }
-      requestAnimationFrame(step);
-    }
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting && !done) { done = true; nums.forEach(animateCount); obs.disconnect(); } });
-    }, { threshold: 0.5 });
-    if (strip) obs.observe(strip);
-  })();
 
   // Fade in on scroll
   const fadeEls = document.querySelectorAll('.mosaic-card,.vsl-card,.unidade-card,.id-card,.faq-item,.oferta-card,.beneficio-item,.reposiciona-col');
