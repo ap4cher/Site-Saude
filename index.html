@@ -268,7 +268,7 @@
     .tratamos-viewport{overflow:hidden;margin:0 calc(-1 * var(--space-container));padding:0 var(--space-container) 8px;}
     .tratamos-track{display:flex;gap:16px;transition:transform .48s cubic-bezier(.4,0,.2,1);will-change:transform;}
     /* card — cores claras invertidas */
-    .tcard{background:linear-gradient(145deg,#4E2518,#7D4535);border:1px solid rgba(125,69,53,.2);border-radius:22px;flex:0 0 220px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 8px 32px rgba(125,69,53,.18);transition:transform .25s,box-shadow .25s;}
+    .tcard{background:linear-gradient(145deg,#4E2518,#7D4535);border:1px solid rgba(125,69,53,.2);border-radius:22px;flex:0 0 280px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 8px 32px rgba(125,69,53,.18);transition:transform .25s,box-shadow .25s;}
     .tcard:hover{transform:translateY(-4px);box-shadow:0 14px 44px rgba(125,69,53,.28);}
     .tcard-photo{width:100%;height:210px;background:linear-gradient(135deg,rgba(125,69,53,.5),rgba(59,22,8,.9));flex-shrink:0;position:relative;overflow:hidden;}
     .tcard-photo-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s ease;}
@@ -1378,10 +1378,11 @@
     let current = 0;
 
     const VISIBLE = 3;
+    const GAP = 16;
 
-    function slideWidth() {
+    function cardW() {
       const c = track.querySelector('.tcard');
-      return c ? (c.offsetWidth + 16) * VISIBLE : 708;
+      return c ? c.offsetWidth : 280;
     }
 
     function totalSteps() {
@@ -1402,7 +1403,8 @@
     function goTo(idx) {
       const steps = totalSteps();
       current = Math.max(0, Math.min(idx, steps - 1));
-      track.style.transform = `translateX(-${current * slideWidth()}px)`;
+      const offset = current * VISIBLE * (cardW() + GAP);
+      track.style.transform = `translateX(-${offset}px)`;
       dotsWrap.querySelectorAll('.tdot').forEach((d, i) => d.classList.toggle('active', i === current));
       if (btnPrev) btnPrev.disabled = current === 0;
       if (btnNext) btnNext.disabled = current >= steps - 1;
