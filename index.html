@@ -382,16 +382,16 @@
     .faq-body-inner{border-top:1px solid var(--border);padding:16px 20px 20px;font-size:.875rem;color:var(--text-medium);line-height:1.7;font-weight:400;}
 
     /* PRÓXIMO PASSO */
-    .proximo-passo{position:relative;background:#1A0A04;overflow:hidden;padding:0;display:flex;flex-direction:column;align-items:stretch;min-height:480px;}
+    .proximo-passo{position:relative;background:#1A0A04;overflow:hidden;padding:0;display:flex;flex-direction:column;align-items:stretch;}
     .pp-arc{width:100%;pointer-events:none;display:block;flex-shrink:0;line-height:0;}
     .pp-arc svg{width:100%;display:block;}
     .pp-arc-top{order:0;}
     .pp-arc-bottom{order:2;}
-    .pp-inner{order:1;flex:1;position:relative;z-index:2;text-align:center;padding:48px 24px;max-width:680px;margin:0 auto;width:100%;box-sizing:border-box;}
+    .pp-inner{order:1;flex:1;position:relative;z-index:2;text-align:center;padding:28px 24px;max-width:680px;margin:0 auto;width:100%;box-sizing:border-box;}
     .pp-label{display:inline-flex;align-items:center;gap:6px;background:rgba(241,213,124,.10);border:1px solid rgba(241,213,124,.28);color:#F1D57C;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:28px;}
-    .pp-h1{font-family:var(--font-display);font-size:2.6rem;color:white;line-height:1.1;margin:0 0 20px;}
+    .pp-h1{font-family:var(--font-display);font-size:1.9rem;color:white;line-height:1.1;margin:0 0 12px;}
     .pp-h1 em{color:#F1D57C;font-style:normal;}
-    .pp-sub{font-size:1rem;color:rgba(255,255,255,.6);line-height:1.7;margin:0 0 36px;max-width:520px;margin-left:auto;margin-right:auto;}
+    .pp-sub{font-size:.9rem;color:rgba(255,255,255,.6);line-height:1.6;margin:0 0 24px;max-width:480px;margin-left:auto;margin-right:auto;}
     .pp-cta{display:inline-flex;align-items:center;gap:10px;background:var(--whatsapp);color:white;font-size:1rem;font-weight:700;padding:16px 28px;border-radius:100px;text-decoration:none;transition:background .2s,transform .18s,box-shadow .2s;box-shadow:0 0 32px rgba(37,211,102,.35);}
     .pp-cta:hover{background:#1ebe5d;transform:scale(1.04);box-shadow:0 0 48px rgba(37,211,102,.55);}
     .pp-cta svg{width:18px;height:18px;fill:white;flex-shrink:0;}
@@ -1098,7 +1098,7 @@
 
   <!-- Arco superior — curva para fora (para cima) -->
   <div class="pp-arc pp-arc-top">
-    <svg viewBox="0 0 1200 130" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <svg viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
       <defs>
         <linearGradient id="arcGradTop" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stop-color="#7D4535" stop-opacity="0"/>
@@ -1112,15 +1112,15 @@
         </filter>
       </defs>
       <!-- glow -->
-      <path d="M-60 120 Q600 -60 1260 120" stroke="url(#arcGradTop)" stroke-width="32" fill="none" filter="url(#blurTop)" opacity="0.6"/>
+      <path d="M-60 75 Q600 -30 1260 75" stroke="url(#arcGradTop)" stroke-width="28" fill="none" filter="url(#blurTop)" opacity="0.6"/>
       <!-- linha nítida -->
-      <path d="M-60 120 Q600 -60 1260 120" stroke="url(#arcGradTop)" stroke-width="2" fill="none"/>
+      <path d="M-60 75 Q600 -30 1260 75" stroke="url(#arcGradTop)" stroke-width="2" fill="none"/>
     </svg>
   </div>
 
   <!-- Arco inferior — curva para fora (para baixo) -->
   <div class="pp-arc pp-arc-bottom">
-    <svg viewBox="0 0 1200 130" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <svg viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
       <defs>
         <linearGradient id="arcGradBot" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stop-color="#7D4535" stop-opacity="0"/>
@@ -1134,9 +1134,9 @@
         </filter>
       </defs>
       <!-- glow -->
-      <path d="M-60 10 Q600 190 1260 10" stroke="url(#arcGradBot)" stroke-width="32" fill="none" filter="url(#blurBot)" opacity="0.6"/>
+      <path d="M-60 5 Q600 110 1260 5" stroke="url(#arcGradBot)" stroke-width="28" fill="none" filter="url(#blurBot)" opacity="0.6"/>
       <!-- linha nítida -->
-      <path d="M-60 10 Q600 190 1260 10" stroke="url(#arcGradBot)" stroke-width="2" fill="none"/>
+      <path d="M-60 5 Q600 110 1260 5" stroke="url(#arcGradBot)" stroke-width="2" fill="none"/>
     </svg>
   </div>
 
