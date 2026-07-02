@@ -264,8 +264,8 @@
     .tratamos-arrow:hover{background:var(--primary-light);border-color:var(--primary);}
     .tratamos-arrow:disabled{opacity:.35;cursor:default;}
     .tratamos-arrow svg{width:18px;height:18px;stroke:var(--primary-dark);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
-    /* viewport — overflow hidden para revelar um a um */
-    .tratamos-viewport{overflow:hidden;margin:0 calc(-1 * var(--space-container));padding:0 var(--space-container) 8px;}
+    /* viewport — exatamente 3 cards visíveis, nunca mais */
+    .tratamos-viewport{overflow:hidden;max-width:872px;margin:0 auto;padding-bottom:8px;}
     .tratamos-track{display:flex;gap:16px;transition:transform .48s cubic-bezier(.4,0,.2,1);will-change:transform;}
     /* card — cores claras invertidas */
     .tcard{background:linear-gradient(145deg,#4E2518,#7D4535);border:1px solid rgba(125,69,53,.2);border-radius:22px;flex:0 0 280px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 8px 32px rgba(125,69,53,.18);transition:transform .25s,box-shadow .25s;}
@@ -1403,7 +1403,7 @@
     function goTo(idx) {
       const steps = totalSteps();
       current = Math.max(0, Math.min(idx, steps - 1));
-      const offset = current * VISIBLE * (cardW() + GAP);
+      const offset = current * (track.parentElement.offsetWidth + GAP);
       track.style.transform = `translateX(-${offset}px)`;
       dotsWrap.querySelectorAll('.tdot').forEach((d, i) => d.classList.toggle('active', i === current));
       if (btnPrev) btnPrev.disabled = current === 0;
