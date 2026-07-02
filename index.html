@@ -369,17 +369,27 @@
     .oferta-card .btn{width:100%;margin-top:8px;}
 
     /* FAQ */
-    .faq{background:var(--bg);}
-    .faq-list{display:flex;flex-direction:column;gap:12px;margin-top:32px;}
-    .faq-item{background:white;border-radius:var(--radius);border:1.5px solid var(--border);overflow:hidden;cursor:pointer;transition:border-color .2s;}
-    .faq-item.open{border-color:var(--primary);}
-    .faq-trigger{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;gap:12px;-webkit-tap-highlight-color:transparent;user-select:none;}
-    .faq-q{font-weight:700;font-size:.9rem;color:var(--text-dark);line-height:1.4;}
-    .faq-chevron{width:20px;height:20px;stroke:var(--primary);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;transition:transform .25s ease;}
-    .faq-item.open .faq-chevron{transform:rotate(180deg);}
+    .faq{background:#0E0A06;}
+    .faq-header{text-align:center;margin-bottom:36px;}
+    .faq-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:7px 18px;border-radius:100px;margin-bottom:24px;}
+    .faq-badge img{width:14px;height:14px;object-fit:contain;filter:brightness(10);}
+    .faq-h1{font-family:var(--font-display);font-size:2.2rem;color:white;line-height:1.15;margin:0;}
+    .faq-h1 em{color:var(--primary-light);font-style:normal;}
+    .faq-list{display:flex;flex-direction:column;gap:12px;max-width:860px;margin:0 auto;}
+    .faq-item{background:rgba(255,255,255,.04);border-radius:14px;border:1px solid rgba(255,255,255,.08);overflow:hidden;cursor:pointer;transition:border-color .2s,background .2s;}
+    .faq-item.open{border-color:rgba(125,69,53,.55);background:rgba(125,69,53,.08);}
+    .faq-trigger{display:flex;align-items:center;gap:14px;padding:20px 22px;-webkit-tap-highlight-color:transparent;user-select:none;}
+    .faq-icon{width:28px;height:28px;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+    .faq-icon img{width:20px;height:20px;object-fit:contain;}
+    .faq-q{font-weight:600;font-size:.9rem;color:rgba(255,255,255,.88);line-height:1.4;flex:1;}
+    .faq-plus{width:26px;height:26px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s,background .2s;}
+    .faq-plus svg{width:12px;height:12px;stroke:rgba(255,255,255,.6);fill:none;stroke-width:2.5;stroke-linecap:round;transition:stroke .2s;}
+    .faq-item.open .faq-plus{transform:rotate(45deg);background:var(--primary);border-color:var(--primary);}
+    .faq-item.open .faq-plus svg{stroke:white;}
     .faq-body{max-height:0;overflow:hidden;transition:max-height .35s ease;}
-    .faq-item.open .faq-body{max-height:300px;}
-    .faq-body-inner{border-top:1px solid var(--border);padding:16px 20px 20px;font-size:.875rem;color:var(--text-medium);line-height:1.7;font-weight:400;}
+    .faq-item.open .faq-body{max-height:400px;}
+    .faq-body-inner{border-top:1px solid rgba(255,255,255,.07);padding:16px 22px 22px 64px;font-size:.875rem;color:rgba(255,255,255,.5);line-height:1.75;font-weight:400;}
+    @media(min-width:640px){.faq-h1{font-size:2.8rem;}}
 
     /* PRÓXIMO PASSO */
     .proximo-passo{position:relative;background:#1A0A04;overflow:hidden;padding:0;display:flex;flex-direction:column;align-items:stretch;}
@@ -1162,37 +1172,68 @@
 <!-- 10. FAQ -->
 <section class="faq section" id="faq">
   <div class="container">
-    <div class="text-center">
-      <span class="section-label" style="color:#974a00;">Dúvidas frequentes</span>
-      <h2 class="section-title">Tire suas dúvidas,<br>depois agendamos!</h2>
+    <div class="faq-header">
+      <div class="faq-badge">
+        <img src="Assets/Icons/Vibe.webp" alt="Vibe">
+        Tire suas dúvidas
+      </div>
+      <h2 class="faq-h1">Antes de decidir,<br><em>talvez queira saber...</em></h2>
     </div>
     <div class="faq-list">
       <div class="faq-item">
-        <div class="faq-trigger"><span class="faq-q">O que é a avaliação com Câmera Termal?</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-trigger">
+          <div class="faq-icon"><img src="Assets/Icons/Vibe.webp" alt=""></div>
+          <span class="faq-q">O que é a avaliação com Câmera Termal?</span>
+          <div class="faq-plus"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
         <div class="faq-body"><div class="faq-body-inner">A termografia é uma tecnologia que identifica diferenças de temperatura no corpo, revelando visualmente onde está a inflamação e a raiz real da sua dor — algo que exames convencionais muitas vezes não conseguem mostrar. Com esse mapa, montamos um protocolo 100% personalizado para você.</div></div>
       </div>
       <div class="faq-item">
-        <div class="faq-trigger"><span class="faq-q">O tratamento é para qualquer tipo de dor?</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-trigger">
+          <div class="faq-icon"><img src="Assets/Icons/Vibe.webp" alt=""></div>
+          <span class="faq-q">O tratamento é para qualquer tipo de dor?</span>
+          <div class="faq-plus"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
         <div class="faq-body"><div class="faq-body-inner">Atendemos principalmente dores profundas: lombar, cervical, joelho, ciático, fibromialgia, bruxismo, enxaqueca de tensão e tensão muscular crônica.</div></div>
       </div>
       <div class="faq-item">
-        <div class="faq-trigger"><span class="faq-q">Preciso ter feito outros tratamentos antes?</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-trigger">
+          <div class="faq-icon"><img src="Assets/Icons/Vibe.webp" alt=""></div>
+          <span class="faq-q">Preciso ter feito outros tratamentos antes?</span>
+          <div class="faq-plus"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
         <div class="faq-body"><div class="faq-body-inner">Não. Mas muitos dos nossos pacientes chegam após tentativas de fisioterapia convencional ou remédios sem resultado duradouro — e finalmente encontram alívio real aqui.</div></div>
       </div>
       <div class="faq-item">
-        <div class="faq-trigger"><span class="faq-q">Quantas sessões são necessárias?</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-trigger">
+          <div class="faq-icon"><img src="Assets/Icons/Vibe.webp" alt=""></div>
+          <span class="faq-q">Quantas sessões são necessárias?</span>
+          <div class="faq-plus"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
         <div class="faq-body"><div class="faq-body-inner">Varia conforme a causa e a intensidade da dor. Nossa equipe define o protocolo completo na avaliação inicial, sem estimativas genéricas.</div></div>
       </div>
       <div class="faq-item">
-        <div class="faq-trigger"><span class="faq-q">O tratamento é doloroso?</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-trigger">
+          <div class="faq-icon"><img src="Assets/Icons/Vibe.webp" alt=""></div>
+          <span class="faq-q">O tratamento é doloroso?</span>
+          <div class="faq-plus"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
         <div class="faq-body"><div class="faq-body-inner">A liberação miofascial pode gerar leve desconforto pontual, mas é tolerável. O objetivo é aliviar, não causar dor. A maioria dos pacientes sente alívio já durante a sessão.</div></div>
       </div>
       <div class="faq-item">
-        <div class="faq-trigger"><span class="faq-q">A Vibe é uma clínica ou um SPA?</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-trigger">
+          <div class="faq-icon"><img src="Assets/Icons/Vibe.webp" alt=""></div>
+          <span class="faq-q">A Vibe é uma clínica ou um SPA?</span>
+          <div class="faq-plus"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
         <div class="faq-body"><div class="faq-body-inner">Somos uma clínica especializada em tratamento de dores profundas. Mas nosso ambiente e atendimento oferecem uma experiência premium: você trata a causa da sua dor e ainda relaxa como em um SPA.</div></div>
       </div>
       <div class="faq-item">
-        <div class="faq-trigger"><span class="faq-q">Posso falar com alguém antes de agendar?</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-trigger">
+          <div class="faq-icon"><img src="Assets/Icons/Vibe.webp" alt=""></div>
+          <span class="faq-q">Posso falar com alguém antes de agendar?</span>
+          <div class="faq-plus"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
         <div class="faq-body"><div class="faq-body-inner">Sim. Chame no WhatsApp e nossa equipe responde todas as suas dúvidas antes de marcar qualquer horário. Sem pressão.</div></div>
       </div>
     </div>
